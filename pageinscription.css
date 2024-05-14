@@ -15,11 +15,16 @@ h1{
     text-align: center;
 }
 
+h2{
+	color: blue;
+	text-align: center;
+}
+
 form {
     max-width: 365px;
     margin: 50px auto;
 	padding: 25px; 
-    background: white;
+	background-color: #7fffff	;
 }
 input[type="text"], input[type="email"], input[type="password"] {
     width: 100%;
