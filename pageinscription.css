@@ -1,0 +1,47 @@
+body{
+    background-image: url("Images/Fondconstellation.png");
+    background-size: cover;
+    background-position: right-side;
+    
+    font-family: Arial;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1{
+    color: white;
+    text-align: center;
+}
+
+form {
+    max-width: 365px;
+    margin: 50px auto;
+	padding: 25px; 
+    background: white;
+}
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+}
+input[type="submit"] {
+    background: #007bff;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background: yellow;
+}
+
+label{
+	
+}
+	
