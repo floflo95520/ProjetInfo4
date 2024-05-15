@@ -13,12 +13,22 @@ body{
 h1{
     color: white;
     text-align: center;
+	font-family: Copperplate,Copperplate Gothic Light,fantasy;
 }
 
 h2{
 	color: blue;
 	text-align: center;
+	font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
 }
+
+
+h4{
+	font-family: Copperplate,Copperplate Gothic Light,fantasy;
+}
+
+
+
 
 form {
     max-width: 365px;
