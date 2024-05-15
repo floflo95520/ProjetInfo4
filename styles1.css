@@ -1,0 +1,97 @@
+/* Réinitialisation des styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles Globaux */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    background-image: url('Fondconstellation2.png'); /* Chemin vers votre image de fond */
+    background-size: cover; /* Assurez-vous que l'image couvre toute la page */
+    background-position: center; /* Centrez l'image */
+    background-repeat: no-repeat; /* Empêchez l'image de se répéter */
+    color:  #C1C1C1; /* Couleur du texte */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* En-tête */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header h1 {
+    float: left;
+    color: red; /* Remplacé par le nom de couleur */
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+nav ul {
+    float: right;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Section de Présentation */
+.presentation {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.presentation h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.presentation p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+/* Pied de Page */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+
+    position: fixed; /* Fixe le pied de page */
+    bottom: 0; /* Le positionne en bas */
+    width: 100%; /* Prend toute la largeur de la fenêtre */
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
