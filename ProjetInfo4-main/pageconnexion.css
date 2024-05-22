@@ -1,0 +1,15 @@
+form {
+    max-width: 365px;
+    margin: 50px auto;
+	padding: 25px; 
+	background-color: blue	;
+}
+
+body{
+    background-image: url("Fondconstellation2.png");
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
