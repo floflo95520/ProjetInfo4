@@ -5,7 +5,7 @@
 }
 
 body{
-    background-image: url("Images/Fondetoile.png");
+    background-image: url("Fondetoile.png");
     background-size: cover;
     background-position: center top 5%;	
 }
@@ -57,10 +57,16 @@ nav[id=menu] a:hover{
 	border-bottom: 2px solid gold;
 }
 
- img{
+
+ #image{
 	width: 30%;
-	margin: auto;
-	
+	margin: auto;  	
+	position: absolute;
+	top: 18%;
+	bottom: 20%;
+	left: 18%;
+	right: 20%;
+
 }
 
 
