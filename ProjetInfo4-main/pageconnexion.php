@@ -33,6 +33,16 @@ if(isset($_POST["source"])){
                     if($utilisateur["Pseudo"]===$nom_utilisateur_saisi && password_verify($mot_de_passe_saisi, $utilisateur["Mot_de_passe"])){
                         $utilisateur_trouve=true;
                         $_SESSION["utilisateur"]=$utilisateur;
+
+                        // Créer un token unique pour le cookie
+                        $token = bin2hex(random_bytes(16));
+                        $expiry = time() + (3600); // 30 jours
+
+                        // Enregistrer le token dans la session utilisateur
+                        $_SESSION['token'] = $token;
+
+                        // Créer un cookie pour se souvenir de l'utilisateur
+                        setcookie('rememberme', $token, $expiry, "/");
                     }
                 }
                 
@@ -79,7 +89,8 @@ if(isset($_POST["source"])){
                 "Prenom"=>$_POST["Prenom"],//
                 "Mot_de_passe" => password_hash($_POST["Mot_de_passe"],PASSWORD_DEFAULT),//
                 "Adresse"=>$_POST["Adresse"],//
-                "Date_inscription"=>date("y-m-d")//
+                "Date_inscription"=>date("Y-m-d"),//
+                "Abonné"=>"0"
                 );
 
                 $nvPseudo=$_POST["Pseudo"];
@@ -115,7 +126,7 @@ if(isset($_POST["source"])){
                 // Enregistrez la structure JSON mise à jour dans le fichier
                 file_put_contents("clients.json", json_encode($utilisateur_existants_temp, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
                 
-
+                header("location:pageaccueil.html");
 
                 
 
