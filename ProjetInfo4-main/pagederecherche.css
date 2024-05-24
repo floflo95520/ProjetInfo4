@@ -26,7 +26,7 @@ nav[id=menu] ul{
 nav[id=menu] li{
 	float: left;
 	width: 25%;
-	text-align; center;
+	text-align: center;
 }
 
 nav[id=menu] ul::after{

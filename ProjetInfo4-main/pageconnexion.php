@@ -7,6 +7,23 @@ error_reporting(E_ALL);
 
 session_start();
 
+
+function loginUser($utilisateur) {
+    $_SESSION["utilisateur"] = $utilisateur;
+
+    // Créer un token unique pour le cookie
+    $token = bin2hex(random_bytes(16));
+    $expiry = time() + (3600); // 1 heure
+
+    // Enregistrer le token dans la session utilisateur
+    $_SESSION['token'] = $token;
+
+    // Créer un cookie pour se souvenir de l'utilisateur
+    setcookie('rememberme', $token, $expiry, "/");
+
+    
+}
+
 if(isset($_POST["source"])){
     $source=$_POST["source"];
     if($source === "connexion"){
@@ -32,28 +49,20 @@ if(isset($_POST["source"])){
                 foreach($utilisateurs as $utilisateur){
                     if($utilisateur["Pseudo"]===$nom_utilisateur_saisi && password_verify($mot_de_passe_saisi, $utilisateur["Mot_de_passe"])){
                         $utilisateur_trouve=true;
-                        $_SESSION["utilisateur"]=$utilisateur;
-
-                        // Créer un token unique pour le cookie
-                        $token = bin2hex(random_bytes(16));
-                        $expiry = time() + (3600); // 30 jours
-
-                        // Enregistrer le token dans la session utilisateur
-                        $_SESSION['token'] = $token;
-
-                        // Créer un cookie pour se souvenir de l'utilisateur
-                        setcookie('rememberme', $token, $expiry, "/");
+                        loginUser($utilisateur);
                     }
                 }
                 
                 if($utilisateur_trouve){
                     echo("Connexion réussie ! Veuillez patienter...");
-                    header("location:pageaccueil.html");
+                    header("location:pageaccueil.php");
+                    exit();
                     
                 }
                 else{
                     echo "pas bon";
                     header("location:pageconnexion.html");
+                    exit();
                 }
 
 
@@ -71,6 +80,13 @@ if(isset($_POST["source"])){
                 if(empty($_POST["Mot_de_passe"]) || empty($_POST["Pseudo"]) || empty($_POST["Sexe"])){
                     throw new Exception("Un des champs requis est invalide");
                 }
+
+                $hf=$_POST["Sexe"];
+                $Abonnement="0";
+                if($hf === "Femme"){
+                    $Abonnement="1";
+                }
+
                 $data=array(
                 "Pseudo" => $_POST["Pseudo"],//
                 "Sexe" => $_POST["Sexe"],//
@@ -90,7 +106,7 @@ if(isset($_POST["source"])){
                 "Mot_de_passe" => password_hash($_POST["Mot_de_passe"],PASSWORD_DEFAULT),//
                 "Adresse"=>$_POST["Adresse"],//
                 "Date_inscription"=>date("Y-m-d"),//
-                "Abonné"=>"0"
+                "Abonné"=>$Abonnement
                 );
 
                 $nvPseudo=$_POST["Pseudo"];
@@ -122,11 +138,12 @@ if(isset($_POST["source"])){
                 
                 // Enregistrez les nouvelles données dans la structure JSON
                 $utilisateur_existants_temp["utilisateur"][] = $data;
+                loginUser($data);
                 
                 // Enregistrez la structure JSON mise à jour dans le fichier
                 file_put_contents("clients.json", json_encode($utilisateur_existants_temp, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
                 
-                header("location:pageaccueil.html");
+                header("location:pageaccueil.php");
 
                 
 
