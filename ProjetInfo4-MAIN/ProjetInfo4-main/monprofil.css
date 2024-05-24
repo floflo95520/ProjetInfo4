@@ -1,0 +1,93 @@
+/*menu */
+
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: Avenir, sans-serif;
+}
+
+body{
+    background-image: url("fondabonnement2.jpg");
+    background-size: cover;
+    background-position: center top 5%;	
+    color:white;
+    margin: 0;
+    padding: 0;
+
+}
+
+nav[id=menu] ul{
+	list-style-type: none;
+}
+
+nav[id=menu] li{
+	float: left;
+	width: 25%;
+	text-align: center;
+}
+
+nav[id=menu] ul::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+nav[id=menu]{
+	width: 100%;
+	background-color: #03011a; 
+	margin: 0 auto;
+	position: sticky;
+	top: 0px;
+}
+
+nav[id=menu] a{
+	display: block;
+	text-decoration: none;
+	color: white;
+	border-bottom: 2px solid transparent;
+	padding: 10px 0px;
+	text-align: center;
+}
+
+nav[id=menu] a:hover{
+	color:orange;
+	border-bottom: 2px solid gold;
+}
+
+
+/* fin menu */
+
+
+
+h1{
+    color: white;
+    text-align: center;
+}
+
+
+form {
+    max-width: 30%;
+    margin: 50px auto;
+	padding: 10px; 
+    color: white;
+}
+    
+
+input[type="text"]{
+    width: 80%; 
+    padding: 20px;  
+    border-radius: 5px;
+    box-sizing: border-box; 
+}       
+
+
+
+textarea{
+    width: 80%;
+    padding: 10px;
+    border: 1px white; 
+    border-radius: 5px;
+    box-sizing: border-box; 
+}
+
+
