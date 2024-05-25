@@ -10,6 +10,47 @@ body{
     background-position: center top 5%;	
 }
 
+
+nav[id=menu] ul{
+	list-style-type: none;
+}
+
+nav[id=menu] li{
+	float: left;
+	width: 20%;
+	text-align: center;
+}
+
+nav[id=menu] ul::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+nav[id=menu]{
+	width: 100%;
+	background-color: #03011a; 
+	margin: 0 auto;
+	position: sticky;
+	top: 0px;
+}
+
+nav[id=menu] a{
+	display: block;
+	text-decoration: none;
+	color: white;
+	border-bottom: 2px solid transparent;
+	padding: 10px 0px;
+	text-align: center;
+}
+
+nav[id=menu] a:hover{
+	color:orange;
+	border-bottom: 2px solid gold;
+}
+
+
+
 .abonnement {
 	text-align: center;
 	margin-top: 20%;
@@ -31,20 +72,7 @@ body{
 }
 
 h1, p{
+	font-family: Copperplate,Copperplate Gothic Light,fantasy;
 	text-align: center;
 	color: white;
 }
-
- #image{
-	width: 30%;
-	margin: auto;  	
-	position: absolute;
-	top: 18%;
-	bottom: 20%;
-	left: 18%;
-	right: 20%;
-
-}
-
-
-
