@@ -13,8 +13,9 @@
 				<li><a href="#">Deconnexion</a></li>
 			</ul>
 		</nav>
-        <h1>Voici les récents utilisateurs avec lesquels vous avez échangé</h1>
+        <h1>Avec qui voulez-vous tchacher ?</h1>
         <div id="utilisateurs">
+
         </div>
         <script>
             var xhr = new XMLHttpRequest();
@@ -27,7 +28,7 @@
                     utilisateurs.forEach(function(utilisateur) {
                         var divUtilisateur = document.createElement('div');
                         divUtilisateur.innerHTML = `
-                            <a href="conversation.html?user=${encodeURIComponent(utilisateur)}">${utilisateur}</a>
+                            <a id="disc" href="conversation.html?user=${encodeURIComponent(utilisateur)}">${utilisateur}</a>
                         `;
                         divUtilisateurs.appendChild(divUtilisateur);
                     });
