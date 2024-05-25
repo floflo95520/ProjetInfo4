@@ -25,6 +25,7 @@ form {
     margin: 50px auto;
 	padding: 25px; 
 	background-color: darkblue	;
+	background: rgba(3,9,9,0.5);
     color: white;
 }
 input[type="text"], input[type="email"], input[type="password"] {
