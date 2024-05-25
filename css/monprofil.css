@@ -7,6 +7,7 @@
 }
 
 body{
+	font-family: Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif;
     background-image: url("../images/fondabonnement2.jpg");
     background-size: cover;
     background-position: center top 5%;	
@@ -60,16 +61,27 @@ nav[id=menu] a:hover{
 
 
 h1{
+	margin-top:2%;
+	font-size: 50px;
     color: white;
     text-align: center;
+	font-family: Copperplate,Copperplate Gothic Light,fantasy;
 }
+
+h4{
+	font-size: 30px;
+	font-family: Copperplate,Copperplate Gothic Light,fantasy;
+}
+
+
+
 
 
 form {
     max-width: 30%;
     margin: 50px auto;
 	padding: 10px; 
-    color: white;
+    color: #7affff;
 }
     
 
@@ -78,16 +90,30 @@ input[type="text"]{
     padding: 20px;  
     border-radius: 5px;
     box-sizing: border-box; 
+	margin-bottom: 10px;
+	border: 1px white; 
 }       
 
+input[type="date"]{
+    width: 60%; 
+    padding: 10px;  
+    border-radius: 5px;
+    box-sizing: border-box;
+	margin-bottom: 10px;
+	border: 1px white; 
+}       
 
 
 textarea{
     width: 80%;
-    padding: 10px;
+    padding: 20px;
     border: 1px white; 
     border-radius: 5px;
     box-sizing: border-box; 
+	margin-bottom: 10px
 }
+
+
+
 
 
