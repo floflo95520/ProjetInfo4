@@ -1,18 +1,9 @@
 <?php
 session_start();
 
-
-if (!isset($_SESSION['utilisateur']) && isset($_COOKIE['rememberme'])) {
-    $token = $_COOKIE['rememberme'];
-
-    // Vérifiez le token
-    if (isset($_SESSION['token']) && $_SESSION['token'] === $token) {
-        // Token valide, recréer la session utilisateur
-        // Vous pouvez également ajouter des vérifications supplémentaires ici
-    } else {
-        // Token invalide, supprimer le cookie
-        setcookie('rememberme', '', time() - 3600, "/");
-    }
+if (!isset($_SESSION['utilisateur'])) {
+    header("Location: pageconnexion.html");
+    exit();
 }
 
 

@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Profil</title>
+        <link rel="stylesheet" href="css/pageprofil.css">
         <?php
 session_start();
 
@@ -57,6 +58,7 @@ if (!isset($_SESSION['utilisateur'])) {
                         <p><strong>Couleur des yeux:</strong> ${utilisateur.Couleur_des_yeux}</p>
                         <p><strong>Couleur des cheveux:</strong> ${utilisateur.Couleur_des_cheveux}</p>
                         <p><strong>Description:</strong> ${utilisateur.Description}</p>
+                        <a href="conversation.html?user=${encodeURIComponent(utilisateur.Pseudo)}">Envoyez-lui un message</a>
                         
                     `;
 

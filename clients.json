@@ -5,15 +5,15 @@
             "Sexe": "Homme",
             "Date_de_naissance": "",
             "Signe_astrologique": "Taureau",
-            "Profession": "",
+            "Profession": "chomeur",
             "Département": "",
-            "Ville": "",
+            "Ville": "osny",
             "Situation": "",
             "Taille": "",
             "Poids": "",
             "Couleur_des_yeux": "",
             "Couleur_des_cheveux": "",
-            "Description": "",
+            "Description": "blabla",
             "Nom": "",
             "Prenom": "",
             "Mot_de_passe": "$2y$10$Ma\/\/2qPEIGGy2VJlaWbmY.nS6XEmM81bVAr8TDyDywH3qc07wUQ\/S",
@@ -62,6 +62,22 @@
             "Adresse": "",
             "Date_inscription": "2024-05-24",
             "Abonné": "1"
+        }
+    ],
+    "conversations": [
+        {
+            "participants": [
+                "z",
+                "a"
+            ],
+            "messages": []
+        },
+        {
+            "participants": [
+                "z",
+                "Lilou"
+            ],
+            "messages": []
         }
     ]
 }

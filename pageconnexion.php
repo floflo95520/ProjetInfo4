@@ -8,21 +8,8 @@ error_reporting(E_ALL);
 session_start();
 
 
-function loginUser($utilisateur) {
-    $_SESSION["utilisateur"] = $utilisateur;
 
-    // Créer un token unique pour le cookie
-    $token = bin2hex(random_bytes(16));
-    $expiry = time() + (3600); // 1 heure
 
-    // Enregistrer le token dans la session utilisateur
-    $_SESSION['token'] = $token;
-
-    // Créer un cookie pour se souvenir de l'utilisateur
-    setcookie('rememberme', $token, $expiry, "/");
-
-    
-}
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 if(isset($_POST["source"])){
     $source=$_POST["source"];
@@ -49,13 +36,14 @@ if(isset($_POST["source"])){
                 foreach($utilisateurs as $utilisateur){
                     if($utilisateur["Pseudo"]===$nom_utilisateur_saisi && password_verify($mot_de_passe_saisi, $utilisateur["Mot_de_passe"])){
                         $utilisateur_trouve=true;
-                        loginUser($utilisateur);
+                        $_SESSION["utilisateur"] = $utilisateur;
+                        
                     }
                 }
                 
                 if($utilisateur_trouve){
                     echo("Connexion réussie ! Veuillez patienter...");
-                    header("location:pageaccueil.php");
+                    header("location:pageaccueil.html");
                     exit();
                     
                 }
@@ -139,12 +127,12 @@ if(isset($_POST["source"])){
                 
                 // Enregistrez les nouvelles données dans la structure JSON
                 $utilisateur_existants_temp["utilisateur"][] = $data;
-                loginUser($data);
+                $_SESSION["utilisateur"] = $data;
                 
                 // Enregistrez la structure JSON mise à jour dans le fichier
                 file_put_contents("clients.json", json_encode($utilisateur_existants_temp, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
                 
-                header("location:pageaccueil.php");
+                header("location:pageaccueil.html");
 
                 
 
