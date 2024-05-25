@@ -6,7 +6,7 @@
 }
 
 body{
-    background-image: url("../images/fondrecherche.png");
+    background-image: url("../images/fondconstellation.png");
     background-size: cover;
     background-position: center top 5%;	
 }
@@ -57,12 +57,21 @@ nav[id=menu] a:hover{
 h1 {
 	text-align: center;
 	margin-top: 1%;
-    font-size: 40px;
+    font-size: 70px;
     margin-bottom: 5%;
 	color: #7affff;
 	font-family: Copperplate,Copperplate Gothic Light,fantasy;
 }
 
-	
-
-
+#disc {
+	font-family: Copperplate,Copperplate Gothic Light,fantasy;    
+    font-size: 3em;
+    background-color: #25245c;
+    color: white;
+	border: 1px white	; 
+    border-radius: 5px;
+    box-sizing: border-box;
+	margin-left: 7%;
+	text-decoration: none;
+	background: rgba(9,9,9,0.5);
+}
