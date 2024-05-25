@@ -11,9 +11,10 @@ body{
 }
 
 h1,h2{
-    position: absolute; /* Position absolue */
+	font-family: Copperplate,Copperplate Gothic Light,fantasy;
+    position: absolute; 
 	text-align: center;
-    width: 100%; /* Pour centrer le texte */
+    width: 100%; 
 	color: white;
 	
 }
