@@ -1,0 +1,50 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: Avenir, sans-serif;
+}
+
+body{
+    background-image: url("../images/fondabonnement2.jpg");
+    background-size: cover;
+    background-position: center top 5%;	
+}
+
+.abonnement {
+	text-align: center;
+	margin-top: 20%;
+}
+.abonnement button {
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+}
+.deja-abonne {
+    padding: 20px;
+    background-color: gray;
+    color: white;
+    font-size: 18px;
+                /* Ajustez la largeur pour qu'elle soit raisonnable pour le texte */
+    display: flex;
+    justify-content: center;  /* Centre le contenu horizontalement */
+    align-items: center;      /* Centre le contenu verticalement */
+}
+
+h1, p{
+	text-align: center;
+	color: white;
+}
+
+ #image{
+	width: 30%;
+	margin: auto;  	
+	position: absolute;
+	top: 18%;
+	bottom: 20%;
+	left: 18%;
+	right: 20%;
+
+}
+
+
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Inscription</title>
+        <link rel="stylesheet" type="text/css" href="css/pageinscription.css">
+        <meta charset="UTF-8">
+		
+    </head>
+    
+    
+    
+    <body>
+        <h1>Ne perd plus de temps et trouve ton Gémeaux</h1>
+    
+        <form action="pageconnexion.php" method="POST" > 
+            <input type="hidden" name="source" value="inscription">
+
+        
+            <h2>Inscription</h2>
+
+            <label for="Signe_astrolo"><h4>Signe Astrologique: </h4></label>
+            <input type="radio" name="Signe_astro" value="Bélier" required> Belier
+            <input type="radio" name="Signe_astro" value="Taureau" required> Taureau
+            <input type="radio" name="Signe_astro" value="Gémeaux" required> Gémeaux
+            <input type="radio" name="Signe_astro" value="Cancer" required> Cancer
+            <input type="radio" name="Signe_astro" value="Sagittaire" required> Sagittaire
+            <input type="radio" name="Signe_astro" value="Vierge" required> Vierge
+            <input type="radio" name="Signe_astro" value="Balance" required> Balance    
+            <input type="radio" name="Signe_astro" value="Scorpion" required> Scorpion
+			<input type="radio" name="Signe_astro" value="Lion" required> Lion
+            <input type="radio" name="Signe_astro" value="Capricorne" required> Capricorne
+            <input type="radio" name="Signe_astro" value="Verseau" required> Verseau
+            <input type="radio" name="Signe_astro" value="Poissons" required> Poissons
+		
+			
+			<label for="conf_signe_astrolo"><h4>Confirmation du Signe Astrologique: </h4></label>
+            <input type="radio" name="conf_signe_astro" value="Bélier" required> Belier
+            <input type="radio" name="conf_signe_astro" value="Taureau" required> Taureau
+            <input type="radio" name="conf_signe_astro" value="Gémeaux" required> Gémeaux
+            <input type="radio" name="conf_signe_astro" value="Cancer" required> Cancer
+            <input type="radio" name="conf_signe_astro" value="Sagittaire" required> Sagittaire
+            <input type="radio" name="conf_signe_astro" value="Vierge" required> Vierge
+            <input type="radio" name="conf_signe_astro" value="Balance" required> Balance    
+            <input type="radio" name="conf_signe_astro" value="Scorpion" > Scorpion
+			<input type="radio" name="conf_signe_astro" value="Lion" required> Lion
+            <input type="radio" name="conf_signe_astro" value="Capricorne" required> Capricorne
+            <input type="radio" name="conf_signe_astro" value="Verseau" required> Verseau
+            <input type="radio" name="conf_signe_astro" value="Poissons" required> Poissons
+			
+			<label for="Sexe"><h4>Sexe: </h4></label>
+			<input type="radio" name="Sexe" value="Homme" required> Homme
+			<input type="radio" name="Sexe" value="Femme" required> Femme
+			<br/><br/>
+			
+            <label for="Prenom"><h4>Prenom: </h4></label>
+            <input type="text" id="Prenom" name="Prenom" >
+
+            <label for="Nom"><h4>Nom: </h4></label>
+            <input type="text" id="Nom" name="Nom" >	
+
+            <label for="Adresse"><h4>Adresse :</h4></label>
+            <input type="text" name="Adresse" id="Adresse">
+			
+			<label for="Pseudo"><h4>Pseudo: </h4></label>
+            <input type="text" id="Pseudo" name="Pseudo" required>
+			
+			<label for="Naissance"><h4>Date de naissance: </h4></label>
+			<input type="date" id="Naissance" name="Naissance" min="1900-01-01" max="2006-05-14">
+
+            <label for="Profession"><h4>Profession :</h4></label>
+            <input type="text" id="Profession" name="Profession">
+
+            <label for="Département"><h4>Département :</h4></label>
+            <input type="text" id="Département" name="Département">
+			
+			<label for="Ville"><h4>Ville :</h4></label>
+            <input type="text" id="Ville" name="Ville" >
+
+            <label for="Situation"><h4>Situation amoureuse :</h4></label>
+            <input type="text" id="Situation" name="Situation">
+    
+            <label for="Taille"><h4>Taille en cm :</h4></label>
+            <input type="number" id="Taille" name="Taille" min="0" max="300">
+
+            <label for="Poids"><h4>Poids en kg :</h4></label>
+            <input type="number" id="Poids" name="Poids" min="1" max="1000">
+
+            <label for="Couleur_yeux"><h4>Couleur des yeux :</h4></label>
+            <input type="text" name="Couleur_yeux" id="Couleur_yeux">
+
+            <label for="Couleur_cheveux"><h4>Couleur des cheveux :</h4></label>
+            <input type="text" name="Couleur_cheveux" id="Couleur_cheveux">
+    
+            <label for="Mot_de_passe"><h4>Mot de Poisson: </h4></label>
+            <input type="password" id="Mot_de_passe" name="Mot_de_passe" required>
+    
+            <label for="confirmer_motdepasse"><h4>Confirmer le mot de Poisson: </h4></label>
+            <input type="password" id="confirmer_motdepasse" name="confirmer_motdepasse" required>
+
+            <label for="Description"><h4>Décrivez-vous ici :</h4></label>
+            <textarea name="Description" cols="10" rows="10"></textarea>
+			
+			<span id="error-message" style="color:red;"></span>
+			<br/><br/>
+			
+            <input type="submit" value="Que les étoiles me guident">
+        </br>
+        <a href="pageconnexion.html">Déjà un compte ? Connectez-vous</a>
+        </form>
+        
+    
+    
+    </body>
+</html>
