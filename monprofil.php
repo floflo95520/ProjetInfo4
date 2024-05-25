@@ -22,7 +22,7 @@ $utilisateur = $_SESSION['utilisateur'];
 <body>
 	<nav id="menu">
 		<ul>
-			<li><a href="pageaccueil.php">Accueil</a></li>
+			<li><a href="pageaccueil.html">Accueil</a></li>
 			<li><a href="pagederecherchepseudo.html">Recherche</a></li>
 			<li><a href="Pagemessagerie.html">Messagerie</a></li>
 			<li><a href="#">Deconnexion</a></li>
