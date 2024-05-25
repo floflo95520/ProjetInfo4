@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Débloquer Utilisateur</title>
+</head>
+<body>
+    <h1>Débloquer Utilisateur</h1>
+    <form id="form-debloquer">
+        <label for="utilisateur">Pseudo de l'utilisateur à débloquer :</label>
+        <input type="text" id="utilisateur" name="utilisateur">
+        <button type="submit">Débloquer</button>
+    </form>
+    <script>
+        document.getElementById('form-debloquer').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var utilisateur = document.getElementById('utilisateur').value;
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'debloquer_utilisateur.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    alert('Utilisateur débloqué avec succès');
+                    window.location.href = 'pageaccueil.html';
+                }
+            };
+            xhr.send('utilisateur=' + encodeURIComponent(utilisateur));
+        });
+    </script>
+</body>
+</html>

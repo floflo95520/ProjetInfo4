@@ -4,6 +4,9 @@ if (!isset($_SESSION['utilisateur'])) {
     header("Location: pageconnexion.html");
     exit();
 }
+if($_SESSION["Abonné"]=="0"){
+    header("Location:pageabonnement.php");
+}
 
 $utilisateur_actuel = $_SESSION['utilisateur']['Pseudo'];
 $message_id = $_POST['message_id'];

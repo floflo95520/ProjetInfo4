@@ -20,14 +20,6 @@ $utilisateur = $_SESSION['utilisateur'];
     <link rel="stylesheet" type="text/css" href="css/monprofil.css">
 </head>
 <body>
-	<nav id="menu">
-		<ul>
-			<li><a href="pageaccueil.html">Accueil</a></li>
-			<li><a href="pagederecherchepseudo.html">Recherche</a></li>
-			<li><a href="Pagemessagerie.html">Messagerie</a></li>
-			<li><a href="#">Deconnexion</a></li>
-		</ul>
-	</nav>
 
     <h1>Mon Profil</h1>
 

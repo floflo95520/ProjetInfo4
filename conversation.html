@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="CSS/conversation.css">
     <title>Conversation</title>
+    <link rel="stylesheet" type="text/css" href="css/conversation.css">
 </head>
 <body>
-	<nav id="menu">
+    <nav id="menu">
 		<ul>
 			<li><a href="pageaccueil.html">Accueil</a></li>
 			<li><a href="monprofil.php">Profil</a></li>
@@ -36,13 +36,20 @@
                         messages.forEach(function(message) {
                             var div = document.createElement('div');
                             div.classList.add(message.sender === 'currentUser' ? 'message-sent' : 'message-received');
-                            div.innerHTML = '<strong>' + message.sender + ':</strong> ' + message.content + ' <button onclick="supprimerMessage(\'' + message.id + '\')">Supprimer</button>';
+                            div.innerHTML = '<strong>' + message.sender + ':</strong> ' + message.content +
+                                ' <button onclick="supprimerMessage(\'' + message.id + '\')">Supprimer</button>' +
+                                ' <button onclick="signalerMessage(\'' + message.id + '\')">Signaler</button>';
                             messagesDiv.appendChild(div);
                         });
                     }
                 };
                 xhr.open('GET', 'chargerconversation.php?user=' + encodeURIComponent(utilisateur), true);
                 xhr.send();
+            }
+
+            function signalerMessage(messageId) {
+                var utilisateursignale=document.getElementById('nom_utilisateur').textContent;
+                window.location.href = 'signaler_message.html?utilisateursignale=' + encodeURIComponent(utilisateursignale) + '&messageId=' + encodeURIComponent(messageId);
             }
 
             document.getElementById('form-message').addEventListener('submit', function(event) {
@@ -71,6 +78,8 @@
                 };
                 xhr.send('message_id=' + encodeURIComponent(messageId) + '&recipient=' + encodeURIComponent(utilisateur));
             };
+
+            window.signalerMessage = signalerMessage; // Assurez-vous que la fonction est définie dans le scope global
 
             chargerConversation();
         });

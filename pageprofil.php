@@ -14,16 +14,7 @@ if (!isset($_SESSION['utilisateur'])) {
 
     </head>
     <body>
-		<nav id="menu">
-			<ul>
-				<li><a href="pageaccueil.php">Accueil</a></li>
-				<li><a href="monprofil.php">Profil</a></li>
-				<li><a href="Pagemessagerie.html">Messagerie</a></li>
-				<li><a href="#">Deconnexion</a></li>
-			</ul>
-		</nav>
-        <h1>Est-ce la bonne personne ?</h1>
-		<a id="retour" href="pagederecherche.html">Retour</a>
+        <h1>Profil</h1>
         <div id="id1">
 
         </div>

@@ -27,6 +27,24 @@ if (json_last_error() !== JSON_ERROR_NONE) {
     exit();
 }
 
+
+$destinataire_trouve = false;
+
+foreach ($conversations["utilisateur"] as $utilisateur) {
+    if ($utilisateur["Pseudo"] === $destinataire) {
+        $destinataire_trouve = true;
+        if (in_array($utilisateur_actuel, $utilisateur["utilisateursbloqués"])) {
+            echo "Vous avez été bloqué par cet utilisateur.";
+            exit();
+        }
+    }
+}
+
+if (!$destinataire_trouve) {
+    echo "Destinataire non trouvé.";
+    exit();
+}
+
 $conversation_trouvee = false;
 
 foreach ($conversations['conversations'] as &$conversation) {

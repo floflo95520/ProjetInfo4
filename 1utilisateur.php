@@ -8,11 +8,6 @@ if (!isset($_SESSION['utilisateur'])) {
 
 
 
-if (!isset($_SESSION['utilisateur'])) {
-    header("Location: pageconnexion.html");
-    exit();
-}
-
 if(isset($_GET["user"])){
 $data= json_decode(file_get_contents("clients.json"),true);
 
@@ -23,9 +18,11 @@ if ($data == NULL) {
 $u=$_GET["user"];
 $utilisateurs=$data["utilisateur"];
 
+
 if(empty($utilisateurs)){
     echo "Erreur : le tableau est vide";
 }
+
 
 $a=NULL;
 foreach($utilisateurs as $utilisateur){

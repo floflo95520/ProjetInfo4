@@ -19,7 +19,8 @@
             "Mot_de_passe": "$2y$10$Ma\/\/2qPEIGGy2VJlaWbmY.nS6XEmM81bVAr8TDyDywH3qc07wUQ\/S",
             "Adresse": "",
             "Date_inscription": "2024-05-24",
-            "Abonné": "1"
+            "Abonné": "1",
+            "utilisateursbloqués": []
         },
         {
             "Pseudo": "Lilou",
@@ -40,7 +41,8 @@
             "Mot_de_passe": "$2y$10$4UqHA9HWP6HVB52wcd5EIeaDv64LTTMzJn2ZIJT696lAYLE4dPezu",
             "Adresse": "302 CAUCHY ",
             "Date_inscription": "24-05-22",
-            "Abonné": "1"
+            "Abonné": "1",
+            "utilisateursbloqués": []
         },
         {
             "Pseudo": "a",
@@ -61,7 +63,8 @@
             "Mot_de_passe": "$2y$10$SfGpv23pSqE7u00LBVntU.O8vP8KGFkERIrR\/XOjwFg07tQdCCGIW",
             "Adresse": "",
             "Date_inscription": "2024-05-24",
-            "Abonné": "1"
+            "Abonné": "1",
+            "utilisateursbloqués": []
         }
     ],
     "conversations": [
@@ -78,6 +81,15 @@
                 "Lilou"
             ],
             "messages": []
+        }
+    ],
+    "signalements": [
+        {
+            "signalé": "a",
+            "signale_par": "z",
+            "message_id": "6652522b35ba1",
+            "raison": "tt",
+            "heuresignalement": "2024-05-25 21:06:11"
         }
     ]
 }
