@@ -8,14 +8,29 @@ body{
     background-image: url("../images/Fondetoile.png");
     background-size: cover;
     background-position: center top 5%;	
+	margin: 0;
+    padding: 0;
+
 }
 
-h1,h2{
-    position: absolute; /* Position absolue */
-	text-align: center;
-    width: 100%; /* Pour centrer le texte */
-	color: white;
-	
+h1{
+	font-family: Copperplate,Copperplate Gothic Light,fantasy;
+	max-width:20%;
+	font-size: 50px;	
+	color: #3affff;
+	margin-bottom:1%;
+	background: rgba(3,3,3,0.3);
+	margin-left: 43%
+}
+
+h2 {
+	font-family: Copperplate,Copperplate Gothic Light,fantasy;
+	max-width:25%;
+	font-size: 30px;
+	color: #3affff;
+	background: rgba(3,3,3,0.5);
+	margin-bottom:5%;
+	margin-left: 40%
 }
 	
 
@@ -86,3 +101,16 @@ nav[id=menu] a:hover{
     color: black;
     text-align: left;
 }
+
+
+ #lien {
+	font-size: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+	margin-bottom: 10%;
+	background: rgba(3,3,3,0.5);
+	margin-left: 5%;
+ }
