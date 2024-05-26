@@ -6,7 +6,7 @@
 
 body{
 	font-family: Copperplate,Copperplate Gothic Light,fantasy;
-    background-image: url("../images/fonddebloque.png");
+    background-image: url("../images/fonddebloque.avif");
     background-size: cover;
     background-position: center top 5%;	
 	margin: 0;
@@ -115,5 +115,4 @@ div p{
 	 text-align: center;
 }
 	
-
 

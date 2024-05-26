@@ -5,10 +5,7 @@ if (!isset($_SESSION['utilisateur'])) {
     header("Location: pageconnexion.html");
     exit();
 }
-if($_SESSION['utilisateur']['Abonné']==="0"){
-    header("Location:pageabonnement.php");
-    exit();
-}
+
 
 if (isset($_GET["user"])) {
     $data = json_decode(file_get_contents("clients.json"), true);
