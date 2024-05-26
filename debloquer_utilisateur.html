@@ -2,14 +2,25 @@
 <html>
 <head>
     <title>Débloquer Utilisateur</title>
+	<link rel="stylesheet" type="text/css" href="CSS/debloquer_utilisateur.css">
 </head>
 <body>
-    <h1>Débloquer Utilisateur</h1>
+	<nav id="menu">
+		<ul>
+			<li><a href="pageaccueil.html">Accueil</a></li>
+			<li><a href="monprofil.php">Profil</a></li>
+			<li><a href="pagemessagerie.html">Messagerie</a></li>
+			<li><a href="deconnexion.php">Deconnexion</a></li>
+		</ul>
+	</nav>
+    <h1>Vous voulez sortir quelqu'un de prison ?</h1>
     <form id="form-debloquer">
-        <label for="utilisateur">Pseudo de l'utilisateur à débloquer :</label>
+        <label for="utilisateur"><h2>Qui est donc l'heureux élu :</h2></label>
         <input type="text" id="utilisateur" name="utilisateur">
         <button type="submit">Débloquer</button>
     </form>
+	
+	<div><p>Il est toujours bon de laisser une chance aux autres, surtout les Taureaux et les Scorpions.</p></div>
     <script>
         document.getElementById('form-debloquer').addEventListener('submit', function(event) {
             event.preventDefault();
