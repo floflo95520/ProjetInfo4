@@ -5,19 +5,11 @@
     <link rel="stylesheet" href="css/monprofil.css">
 </head>
 <body>
-	<nav id="menu">
-		<ul>
-			<li><a href="pageaccueil.html">Accueil</a></li>
-			<li><a href="pagederecherchepseudo.html">Recherche</a></li>
-			<li><a href="pagemessagerie.html">Messagerie</a></li>
-			<li><a href="php/deconnexion.php">Deconnexion</a></li>
-		</ul>
-	</nav>
     <h1>Mon Profil</h1>
     <form id="profilForm">
         <div id="gauche">
             <label><h4>Pseudo:</h4></label>
-            <input type="text" id="pseudo" readonly><br>
+            <input type="text" id="pseudo"><br>
             <label><h4>Sexe:</h4></label>
             <input type="text" id="sexe"><br>
             <label><h4>Date de naissance:</h4></label>
@@ -55,10 +47,10 @@
     </form>
 
     <script>
-        // Fonction pour récupérer les données de l'utilisateur connecté
+       
         function chargerProfil() {
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "php/mon_profil.php", true);
+            xhr.open("GET", "mon_profil.php", true);
             xhr.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     var utilisateur = JSON.parse(this.responseText);
@@ -84,7 +76,7 @@
             xhr.send();
         }
 
-        // Fonction pour mettre à jour le profil de l'utilisateur
+       
         function mettreAJourProfil() {
             var utilisateur = {
                 Sexe: document.getElementById('sexe').value,
@@ -106,7 +98,7 @@
             };
 
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "php/changerprofil.php", true);
+            xhr.open("POST", "changerprofil.php", true);
             xhr.setRequestHeader("Content-Type", "application/json");
             xhr.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -116,8 +108,10 @@
             xhr.send(JSON.stringify(utilisateur));
         }
 
-        // Charger le profil au chargement de la page
+     
         window.onload = chargerProfil;
     </script>
 </body>
 </html>
+
+               

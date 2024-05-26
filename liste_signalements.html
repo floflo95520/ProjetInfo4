@@ -5,6 +5,11 @@
     <link rel="stylesheet" type="text/css" href="css/liste_signalements.css">
 </head>
 <body>
+    <nav id="menu">
+		<ul>
+			<li><a href="pageaccueil.html">Accueil</a></li>
+		</ul>
+	</nav>
     <h1>Liste des Signalements</h1>
     <div id="signalementsList"></div>
 
@@ -32,7 +37,7 @@
                 });
             }
         };
-        xhr.open("GET", "php/liste_signalements.php", true);
+        xhr.open("GET", "liste_signalements.php", true);
         xhr.send();
     </script>
 </body>

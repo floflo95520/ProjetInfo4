@@ -5,6 +5,11 @@
     <link rel="stylesheet" type="text/css" href="css/liste_utilisateurs.css">
 </head>
 <body>
+    <nav id="menu">
+		<ul>
+			<li><a href="pageaccueil.html">Accueil</a></li>
+		</ul>
+	</nav>
     <h1>Liste des utilisateurs</h1>
     <div id="usersList"></div>
 
@@ -27,7 +32,7 @@
                 });
             }
         };
-        xhr.open("GET", "php/liste_utilisateurs.php", true);
+        xhr.open("GET", "liste_utilisateurs.php", true);
         xhr.send();
     </script>
 </body>

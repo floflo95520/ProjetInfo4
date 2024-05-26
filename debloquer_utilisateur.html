@@ -8,9 +8,9 @@
 	<nav id="menu">
 		<ul>
 			<li><a href="pageaccueil.html">Accueil</a></li>
-			<li><a href="php/monprofil.php">Profil</a></li>
+			<li><a href="monprofil.php">Profil</a></li>
 			<li><a href="pagemessagerie.html">Messagerie</a></li>
-			<li><a href="php/deconnexion.php">Deconnexion</a></li>
+			<li><a href="deconnexion.php">Deconnexion</a></li>
 		</ul>
 	</nav>
     <h1>Vous voulez sortir quelqu'un de prison ?</h1>
@@ -26,7 +26,7 @@
             event.preventDefault();
             var utilisateur = document.getElementById('utilisateur').value;
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'php/debloquer_utilisateur.php', true);
+            xhr.open('POST', 'debloquer_utilisateur.php', true);
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xhr.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {

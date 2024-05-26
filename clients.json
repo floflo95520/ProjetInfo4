@@ -2,29 +2,28 @@
     "utilisateur": [
         {
             "Pseudo": "z",
-            "Sexe": "homme",
+            "Sexe": "Homme",
             "Date_de_naissance": "",
-            "Signe_astrologique": "taureau",
-            "Profession": "zz",
-            "Département": "val d'oise",
-            "Ville": "",
+            "Signe_astrologique": "Taureau",
+            "Profession": "chomeur",
+            "Département": "",
+            "Ville": "osny",
             "Situation": "",
             "Taille": "",
             "Poids": "",
             "Couleur_des_yeux": "",
             "Couleur_des_cheveux": "",
-            "Description": "",
-            "Nom": "chapin",
-            "Prenom": "",
-            "Mot_de_passe": "$2y$10$wS1GQPsT2MBnPKncHz5d8ufDtxz975Vbi.5pTqRQFNi6lEOlJ77Xe",
+            "Description": "blabla",
+            "Nom": "cc",
+            "Prenom": "fff",
+            "Mot_de_passe": "$2y$10$rrzRty5GZEWchXp6FGcY4.m7VxPS57hRPiJoeNZEzIGuBOerMHJCm",
             "Adresse": "",
             "Date_inscription": "2024-05-24",
-            "Abonné": "1",
+            "Abonné": "",
             "Utilisateursbloqués": [],
             "Visites": [
                 "a",
-                "f",
-                "t"
+                "f"
             ],
             "Admin": true
         },
@@ -76,10 +75,9 @@
             "Abonné": "1",
             "Utilisateursbloqués": [],
             "Visites": [
-                "z",
-                "f"
+                "z"
             ],
-            "Admin": false
+            "Admin": true
         },
         {
             "Pseudo": "f",
@@ -97,57 +95,7 @@
             "Description": "",
             "Nom": "",
             "Prenom": "",
-            "Mot_de_passe": "$2y$10$wLFl\/07K2bF64AWowRSye.w\/S0REm7ydwfj.eGNxc2DEpegGsqHSq",
-            "Adresse": "",
-            "Date_inscription": "2024-05-26",
-            "Abonné": "1",
-            "Utilisateursbloqués": [],
-            "Visites": [
-                "z"
-            ],
-            "Admin": false
-        },
-        {
-            "Pseudo": "e",
-            "Sexe": "Homme",
-            "Date_de_naissance": "",
-            "Signe_astrologique": "Bélier",
-            "Profession": "",
-            "Département": "",
-            "Ville": "",
-            "Situation": "",
-            "Taille": "",
-            "Poids": "",
-            "Couleur_des_yeux": "",
-            "Couleur_des_cheveux": "",
-            "Description": "",
-            "Nom": "",
-            "Prenom": "",
-            "Mot_de_passe": "$2y$10$i0aQoUgeqMlzg8fCX2ypKOAKKehLTlgwxAYvDLQZiyHBcf3ay86VC",
-            "Adresse": "",
-            "Date_inscription": "2024-05-26",
-            "Abonné": "0",
-            "Utilisateursbloqués": [],
-            "Visites": [],
-            "Admin": false
-        },
-        {
-            "Pseudo": "t",
-            "Sexe": "Femme",
-            "Date_de_naissance": "",
-            "Signe_astrologique": "Taureau",
-            "Profession": "",
-            "Département": "",
-            "Ville": "",
-            "Situation": "",
-            "Taille": "",
-            "Poids": "",
-            "Couleur_des_yeux": "",
-            "Couleur_des_cheveux": "",
-            "Description": "",
-            "Nom": "",
-            "Prenom": "",
-            "Mot_de_passe": "$2y$10$j2b7OxEy6zpYmwOXTMY49eJ1hesxVVK5FujJQi\/SQj\/sdep.U4iIe",
+            "Mot_de_passe": "$2y$10$hh\/r5SrEYbcjJzN3TFJsOOmNUWdrIsm6hKXTo25AnlTJU06PmevYy",
             "Adresse": "",
             "Date_inscription": "2024-05-26",
             "Abonné": "1",
@@ -162,14 +110,7 @@
                 "z",
                 "a"
             ],
-            "messages": [
-                {
-                    "id": "66536d437501c",
-                    "sender": "z",
-                    "content": "aaa",
-                    "timestamp": "2024-05-26 17:11:31"
-                }
-            ]
+            "messages": []
         },
         {
             "participants": [
@@ -184,13 +125,6 @@
                 "z"
             ],
             "messages": []
-        },
-        {
-            "participants": [
-                "t",
-                "z"
-            ],
-            "messages": []
         }
     ],
     "signalements": [
@@ -202,21 +136,19 @@
             "heuresignalement": "2024-05-25 21:06:11"
         },
         {
-            "signalé": "z",
-            "signale_par": "a",
-            "message_id": "66535ffbb8b58",
-            "raison": "jlaime pas",
-            "heuresignalement": "2024-05-26 16:14:59"
+            "signalé": "a",
+            "signale_par": "z",
+            "message_id": "66539e205f204",
+            "raison": "aaaa",
+            "heuresignalement": "2024-05-26 20:40:04"
         },
         {
-            "signalé": "f",
+            "signalé": "Lilou",
             "signale_par": "z",
-            "message_id": "66537a5ef40ba",
-            "raison": "insulte",
-            "heuresignalement": "2024-05-26 18:07:46"
+            "message_id": "6653a48d29854",
+            "raison": "zz",
+            "heuresignalement": "2024-05-26 21:07:28"
         }
     ],
-    "bannis": [
-        "a"
-    ]
+    "bannis": []
 }
