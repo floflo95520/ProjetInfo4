@@ -12,7 +12,7 @@
 			<li><a href="pageaccueil.html">Accueil</a></li>
 			<li><a href="monprofil.html">Profil</a></li>
 			<li><a href="Pagemessagerie.html">Messagerie</a></li>
-			<li><a href="#">Deconnexion</a></li>
+			<li><a href="php/deconnexion.php">Deconnexion</a></li>
 		</ul>
 	</nav>
     <h1>Aller cherche ton étoile</h1>
@@ -44,7 +44,7 @@
             };
             
             // Envoie une requête au serveur avec le texte de recherche
-            xhr.open('GET', 'recherche_utilisateurs.php?texte=' + encodeURIComponent(text), true);
+            xhr.open('GET', 'php/recherche_utilisateurs.php?texte=' + encodeURIComponent(text), true);
             xhr.send();
         }
     </script>

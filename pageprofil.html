@@ -62,7 +62,7 @@
                     document.getElementById('form-bloquer').addEventListener('submit', function(event) {
                         event.preventDefault();
                         var xhrBlock = new XMLHttpRequest();
-                        xhrBlock.open('POST', 'bloquer_utilisateur.php', true);
+                        xhrBlock.open('POST', 'php/bloquer_utilisateur.php', true);
                         xhrBlock.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                         xhrBlock.onreadystatechange = function() {
                             if (this.readyState == 4 && this.status == 200) {
@@ -74,7 +74,7 @@
                     });
                 }
             };
-            xhr.open("GET", "1utilisateur.php?user=" + encodeURIComponent(userPseudo), true);
+            xhr.open("GET", "php/1utilisateur.php?user=" + encodeURIComponent(userPseudo), true);
             xhr.send();
         }
     </script>

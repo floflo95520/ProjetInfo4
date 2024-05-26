@@ -64,7 +64,7 @@
                             formData.forEach((value, key) => { data[key] = value });
 
                             var xhrUpdate = new XMLHttpRequest();
-                            xhrUpdate.open('POST', 'profil_utilisateur.php', true);
+                            xhrUpdate.open('POST', 'php/profil_utilisateur.php', true);
                             xhrUpdate.setRequestHeader('Content-Type', 'application/json');
                             xhrUpdate.onreadystatechange = function() {
                                 if (this.readyState == 4 && this.status == 200) {
@@ -78,13 +78,13 @@
                 }
             };
             
-            xhr.open("GET", "profil_admin.php?user=" + encodeURIComponent(userPseudo), true);
+            xhr.open("GET", "php/profil_admin.php?user=" + encodeURIComponent(userPseudo), true);
             xhr.send();
 
             document.getElementById('supprimer-btn').addEventListener('click', function() {
                 if (confirm("Voulez-vous vraiment supprimer ce profil ?")) {
                     var xhrDelete = new XMLHttpRequest();
-                    xhrDelete.open('POST', 'supprimer_utilisateur.php', true);
+                    xhrDelete.open('POST', 'php/supprimer_utilisateur.php', true);
                     xhrDelete.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                     xhrDelete.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
@@ -102,7 +102,7 @@
             document.getElementById('bannir-btn').addEventListener('click', function() {
                 if (confirm("Voulez-vous vraiment bannir cet utilisateur ?")) {
                     var xhrBan = new XMLHttpRequest();
-                    xhrBan.open('POST', 'bannir_utilisateur.php', true);
+                    xhrBan.open('POST', 'php/bannir_utilisateur.php', true);
                     xhrBan.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                     xhrBan.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {

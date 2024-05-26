@@ -8,9 +8,9 @@
     <nav id="menu">
 		<ul>
 			<li><a href="pageaccueil.html">Accueil</a></li>
-			<li><a href="monprofil.php">Profil</a></li>
+			<li><a href="php/monprofil.php">Profil</a></li>
 			<li><a href="pagederecherchepseudo.html">Recherche</a></li>
-			<li><a href="deconnexion.php">Deconnexion</a></li>
+			<li><a href="php/deconnexion.php">Deconnexion</a></li>
 		</ul>
 	</nav>
     <h1>Conversation entre <span id="nom_utilisateur"></span></h1>
@@ -41,14 +41,14 @@
                         });
                     }
                 };
-                xhr.open('GET', 'chargerconversation_admin.php?utilisateur1=' + encodeURIComponent(utilisateur1) + '&utilisateur2=' + encodeURIComponent(utilisateur2), true);
+                xhr.open('GET', 'php/chargerconversation_admin.php?utilisateur1=' + encodeURIComponent(utilisateur1) + '&utilisateur2=' + encodeURIComponent(utilisateur2), true);
                 xhr.send();
             }
 
 
             window.supprimerMessage = function(messageId) {
                 var xhr = new XMLHttpRequest();
-                xhr.open('POST', 'supprimer_message_admin.php', true);
+                xhr.open('POST', 'php/supprimer_message_admin.php', true);
                 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                 xhr.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {

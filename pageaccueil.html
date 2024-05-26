@@ -10,10 +10,10 @@
 		<nav id="menu">
 			<ul>
 				<li><a href="monprofil.html">Profil</a></li>
-				<li><a href="pageabonnement.php">Abonnement</a></li>
+				<li><a href="php/pageabonnement.php">Abonnement</a></li>
 				<li><a href="pagederecherchepseudo.html">Recherche</a></li>
 				<li><a href="pagemessagerie.html">Messagerie</a></li>
-				<li><a href="deconnexion.php">Deconnexion</a></li>
+				<li><a href="php/deconnexion.php">Deconnexion</a></li>
 			</ul>
 		</nav>
 		
@@ -74,7 +74,7 @@
 				
 			};
 
-			xhr.open("GET", "10utilisateurs.php", true);
+			xhr.open("GET", "php/10utilisateurs.php", true);
         	xhr.send();
 
         // Vérifier si l'utilisateur est un administrateur
@@ -97,7 +97,7 @@
                 }
             }
         };
-        xhrAdmin.open("GET", "verifier_admin.php", true);
+        xhrAdmin.open("GET", "php/verifier_admin.php", true);
         xhrAdmin.send();
 		
 		

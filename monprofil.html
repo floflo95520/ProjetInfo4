@@ -10,7 +10,7 @@
 			<li><a href="pageaccueil.html">Accueil</a></li>
 			<li><a href="pagederecherchepseudo.html">Recherche</a></li>
 			<li><a href="pagemessagerie.html">Messagerie</a></li>
-			<li><a href="deconnexion.php">Deconnexion</a></li>
+			<li><a href="php/deconnexion.php">Deconnexion</a></li>
 		</ul>
 	</nav>
     <h1>Mon Profil</h1>
@@ -58,7 +58,7 @@
         // Fonction pour récupérer les données de l'utilisateur connecté
         function chargerProfil() {
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "mon_profil.php", true);
+            xhr.open("GET", "php/mon_profil.php", true);
             xhr.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     var utilisateur = JSON.parse(this.responseText);
@@ -106,7 +106,7 @@
             };
 
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "changerprofil.php", true);
+            xhr.open("POST", "php/changerprofil.php", true);
             xhr.setRequestHeader("Content-Type", "application/json");
             xhr.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
