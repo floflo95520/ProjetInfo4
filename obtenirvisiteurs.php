@@ -6,6 +6,10 @@ if (!isset($_SESSION['utilisateur'])) {
     header("Location: pageconnexion.html");
     exit();
 }
+if($_SESSION['utilisateur']['Abonné']){
+    header("Location: pageabonnement.php");
+    exit();
+}
 
 
 

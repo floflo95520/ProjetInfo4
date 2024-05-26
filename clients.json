@@ -23,7 +23,8 @@
             "Utilisateursbloqués": [],
             "Visites": [
                 "a"
-            ]
+            ],
+            "Admin": true
         },
         {
             "Pseudo": "Lilou",
@@ -48,7 +49,8 @@
             "Utilisateursbloqués": [],
             "Visites": [
                 "z"
-            ]
+            ],
+            "Admin": false
         },
         {
             "Pseudo": "a",
@@ -73,7 +75,8 @@
             "Utilisateursbloqués": [],
             "Visites": [
                 "z"
-            ]
+            ],
+            "Admin": false
         }
     ],
     "conversations": [
@@ -100,5 +103,6 @@
             "raison": "tt",
             "heuresignalement": "2024-05-25 21:06:11"
         }
-    ]
+    ],
+    "bannis": []
 }

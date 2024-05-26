@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profil Utilisateur</title>
+    <link rel="stylesheet" href="css/pageprofil.css">
+</head>
+<body>
+    <h1>Profil Utilisateur</h1>
+    <div id="profil"></div>
+    <button id="modifier-btn">Modifier Profil</button>
+
+    <script>
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search.substring(1);
+            const regex = /([^&=]+)=([^&]*)/g;
+            let m;
+            while (m = regex.exec(queryString)) {
+                params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+            }
+            return params;
+        } // Fonction servant à récupérer les paramètres dans l'URL // Chat GPT
+
+        const queryParams = getQueryParams();
+        const userPseudo = queryParams['user'];
+
+        if (userPseudo) {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var utilisateur = JSON.parse(xhr.response);
+                    
+                    if (utilisateur.message) {
+                        document.getElementById('profil').innerText = utilisateur.message;
+                    } else {
+                        var profilDiv = document.createElement('div');
+                        profilDiv.innerHTML = `
+                            <form id="profil-form">
+                                <p><strong>Pseudo:</strong> <input type="text" name="Pseudo" value="${utilisateur.Pseudo}" readonly></p>
+                                <p><strong>Signe astrologique:</strong> <input type="text" name="Signe_astrologique" value="${utilisateur.Signe_astrologique}"></p>
+                                <p><strong>Sexe:</strong> <input type="text" name="Sexe" value="${utilisateur.Sexe}"></p>
+                                <p><strong>Date de naissance:</strong> <input type="date" name="Date_de_naissance" value="${utilisateur.Date_de_naissance}"></p>
+                                <p><strong>Date d'inscription:</strong> <input type="text" name="Date_inscription" value="${utilisateur.Date_inscription}" readonly></p>
+                                <p><strong>Profession:</strong> <input type="text" name="Profession" value="${utilisateur.Profession}"></p>
+                                <p><strong>Situation:</strong> <input type="text" name="Situation" value="${utilisateur.Situation}"></p>
+                                <p><strong>Ville:</strong> <input type="text" name="Ville" value="${utilisateur.Ville}"></p>
+                                <p><strong>Poids:</strong> <input type="number" name="Poids" value="${utilisateur.Poids}"></p>
+                                <p><strong>Taille:</strong> <input type="number" name="Taille" value="${utilisateur.Taille}"></p>
+                                <p><strong>Couleur des yeux:</strong> <input type="text" name="Couleur_des_yeux" value="${utilisateur.Couleur_des_yeux}"></p>
+                                <p><strong>Couleur des cheveux:</strong> <input type="text" name="Couleur_des_cheveux" value="${utilisateur.Couleur_des_cheveux}"></p>
+                                <p><strong>Description:</strong> <textarea name="Description">${utilisateur.Description}</textarea></p>
+                                <button type="submit">Enregistrer</button>
+                            </form>
+                        `;
+                        document.getElementById('profil').appendChild(profilDiv);
+
+                        document.getElementById('profil-form').addEventListener('submit', function(event) {
+                            event.preventDefault();
+                            var formData = new FormData(event.target);
+                            var data = {};
+                            formData.forEach((value, key) => { data[key] = value });
+
+                            var xhrUpdate = new XMLHttpRequest();
+                            xhrUpdate.open('POST', 'profil_utilisateur.php', true);
+                            xhrUpdate.setRequestHeader('Content-Type', 'application/json');
+                            xhrUpdate.onreadystatechange = function() {
+                                if (this.readyState == 4 && this.status == 200) {
+                                    var response = JSON.parse(xhrUpdate.response);
+                                    alert(response.message);
+                                }
+                            };
+                            xhrUpdate.send(JSON.stringify(data));
+                        });
+                    }
+                }
+            };
+            
+            xhr.open("GET", "profil_admin.php?user=" + encodeURIComponent(userPseudo), true);
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

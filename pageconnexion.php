@@ -97,7 +97,8 @@ if(isset($_POST["source"])){
                 "Date_inscription"=>date("Y-m-d"),//
                 "Abonné"=>$Abonnement,
                 "Utilisateursbloqués" => [],
-                "Visites" => []
+                "Visites" => [],
+                "Admin" => false
                 );
 
                 $nvPseudo=$_POST["Pseudo"];

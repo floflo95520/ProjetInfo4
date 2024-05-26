@@ -25,6 +25,9 @@
 
 		<h2>Voici les récents inscrits :</h2>
 	</br>
+		<div id="Admin">
+
+		</div>
 		<div id="elements">
 
 		</div>
@@ -66,8 +69,26 @@
 		
 				
 			};
+
 			xhr.open("GET", "10utilisateurs.php", true);
-			xhr.send();
+        	xhr.send();
+
+        // Vérifier si l'utilisateur est un administrateur
+        var xhrAdmin = new XMLHttpRequest();
+        xhrAdmin.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var response = JSON.parse(xhrAdmin.response);
+				var divAdmin=document.getElementById("Admin");
+                if (response.is_admin) {
+                    var adminLink = document.createElement('a');
+                    adminLink.href = 'liste_utilisateurs.html';
+                    adminLink.innerText = 'Liste de tous les utilisateurs';
+                    divAdmin.appendChild(adminLink);
+                }
+            }
+        };
+        xhrAdmin.open("GET", "verifier_admin.php", true);
+        xhrAdmin.send();
 		
 		
 			</script>

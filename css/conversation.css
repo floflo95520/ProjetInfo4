@@ -83,3 +83,11 @@ h1 {
  [type="submit"]:hover {
     background: yellow;
 }
+
+[type="text"] {
+    font-size: 40px;
+    margin-left: 5%;
+    margin-right: 2%;
+    width: 60%;
+    font-family: Copperplate,Copperplate Gothic Light,fantasy;
+ }

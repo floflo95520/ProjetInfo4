@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des utilisateurs</title>
+    <link rel="stylesheet" type="text/css" href="css/liste_utilisateurs.css">
+</head>
+<body>
+    <h1>Liste des utilisateurs</h1>
+    <div id="usersList"></div>
+
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var utilisateurs = JSON.parse(xhr.response);
+
+                utilisateurs.forEach(utilisateur => {
+                    var userDiv = document.createElement('div');
+                    var profilLien = document.createElement('a');
+                    profilLien.href = 'profil_admin.html?user=' + encodeURIComponent(utilisateur.Pseudo);
+                    profilLien.innerText = utilisateur.Pseudo;
+                    userDiv.appendChild(profilLien);
+
+                    var usersListDiv = document.getElementById('usersList');
+                    usersListDiv.appendChild(userDiv);
+                });
+            }
+        };
+        xhr.open("GET", "liste_utilisateurs.php", true);
+        xhr.send();
+    </script>
+</body>
+</html>
