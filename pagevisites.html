@@ -8,9 +8,9 @@
     <nav id="menu">
 		<ul>
 			<li><a href="pageaccueil.html">Accueil</a></li>
-			<li><a href="php/monprofil.php">Profil</a></li>
+			<li><a href="monprofil.php">Profil</a></li>
 			<li><a href="pagemessagerie.html">Messagerie</a></li>
-			<li><a href="php/deconnexion.php">Deconnexion</a></li>
+			<li><a href="deconnexion.php">Deconnexion</a></li>
 		</ul>
 	</nav>
     <h1>Visiteurs de mon profil</h1>
@@ -20,14 +20,14 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'php/obtenirvisiteurs.php', true);
+            xhr.open('GET', 'obtenirvisiteurs.php', true);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
                         try {
                             var visitors = JSON.parse(xhr.responseText);
                             var visitorsList = document.getElementById('visitorsList');
-                            visitorsList.innerHTML = ''; // Vider la liste des visiteurs
+                            visitorsList.innerHTML = ''; 
 
                             if (visitors.error) {
                                 document.getElementById('error').textContent = visitors.error;

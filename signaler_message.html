@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Signaler Message</title>
+    <link rel="stylesheet" href="css/signaler.css">
 </head>
 <body>
     <h1>Signaler le message</h1>
@@ -20,7 +21,7 @@
                 event.preventDefault();
                 var raison = document.getElementById('raison').value;
                 var xhr = new XMLHttpRequest();
-                xhr.open('POST', 'php/signaler_message.php', true);
+                xhr.open('POST', 'signaler_message.php', true);
                 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                 xhr.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {

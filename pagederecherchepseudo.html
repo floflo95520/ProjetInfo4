@@ -11,13 +11,13 @@
 		<ul>
 			<li><a href="pageaccueil.html">Accueil</a></li>
 			<li><a href="monprofil.html">Profil</a></li>
-			<li><a href="Pagemessagerie.html">Messagerie</a></li>
-			<li><a href="php/deconnexion.php">Deconnexion</a></li>
+			<li><a href="pagemessagerie.html">Messagerie</a></li>
+			<li><a href="deconnexion.php">Deconnexion</a></li>
 		</ul>
 	</nav>
     <h1>Aller cherche ton étoile</h1>
 	<h2>Es-tu a la recherche d'un lion ou d'un verseau, peut-être une vierge ? <h2>
-    <input type="text" id="searchBar" placeholder="Bar de recherche (avec son pseudo)" onkeyup="searchpseudo(this.value)">
+    <input type="text" id="searchBar" placeholder="Barre de recherche (avec son pseudo)" onkeyup="searchpseudo(this.value)">
     <div id="results" class="result"></div>
 
     <script>   
@@ -27,24 +27,24 @@
                 if(this.readyState == 4 && this.status == 200){
                     var users = JSON.parse(this.response);
                     var resultsDiv=document.getElementById('results');
-                    resultsDiv.innerHTML = ''; // Efface les résultats précédents
+                    resultsDiv.innerHTML = ''; 
 
                     users.forEach(user => {
                         var userLink = document.createElement('a');
                         userLink.classList.add('user');
-                        userLink.textContent = user.Pseudo; // Affiche le pseudo de l'utilisateur
-                        userLink.href = 'pageprofil.html?user=' + encodeURIComponent(user.Pseudo); // Lien vers la page de profil
+                        userLink.textContent = user.Pseudo; 
+                        userLink.href = 'pageprofil.html?user=' + encodeURIComponent(user.Pseudo); 
 
                         var userDiv = document.createElement('div');
-                        userDiv.appendChild(userLink); // Ajoute le lien vers la page de profil à la liste des résultats
+                        userDiv.appendChild(userLink); 
 
-                        resultsDiv.appendChild(userDiv); // Ajoute l'utilisateur à la liste des résultats
+                        resultsDiv.appendChild(userDiv); 
                     });
                 }
             };
             
-            // Envoie une requête au serveur avec le texte de recherche
-            xhr.open('GET', 'php/recherche_utilisateurs.php?texte=' + encodeURIComponent(text), true);
+            
+            xhr.open('GET', 'recherche_utilisateurs.php?texte=' + encodeURIComponent(text), true);
             xhr.send();
         }
     </script>
