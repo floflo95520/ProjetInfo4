@@ -14,17 +14,17 @@ $donnees = json_decode($contenu_json, true);
 
 // Vérifier et initialiser les listes de blocage si nécessaire
 foreach ($donnees["utilisateur"] as &$utilisateur) {
-    if (!isset($utilisateur["utilisateursbloqués"])) {
-        $utilisateur["utilisateursbloqués"] = [];
+    if (!isset($utilisateur["Utilisateursbloqués"])) {
+        $utilisateur["Utilisateursbloqués"] = [];
     }
 }
 
 // Retirer l'utilisateur à débloquer de la liste de l'utilisateur actuel
 foreach ($donnees["utilisateur"] as &$utilisateur) {
     if ($utilisateur["Pseudo"] === $utilisateur_actuel) {
-        $index = array_search($utilisateur_a_debloquer, $utilisateur["utilisateursbloqués"]);
+        $index = array_search($utilisateur_a_debloquer, $utilisateur["Utilisateursbloqués"]);
         if ($index !== false) {
-            array_splice($utilisateur["utilisateursbloqués"], $index, 1);
+            array_splice($utilisateur["Utilisateursbloqués"], $index, 1);
         }
         break;
     }
@@ -33,9 +33,9 @@ foreach ($donnees["utilisateur"] as &$utilisateur) {
 // Retirer l'utilisateur actuel de la liste de l'utilisateur débloqué
 foreach ($donnees["utilisateur"] as &$utilisateur) {
     if ($utilisateur["Pseudo"] === $utilisateur_a_debloquer) {
-        $index = array_search($utilisateur_actuel, $utilisateur["utilisateursbloqués"]);
+        $index = array_search($utilisateur_actuel, $utilisateur["Utilisateursbloqués"]);
         if ($index !== false) {
-            array_splice($utilisateur["utilisateursbloqués"], $index, 1);
+            array_splice($utilisateur["Utilisateursbloqués"], $index, 1);
         }
         break;
     }

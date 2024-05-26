@@ -20,8 +20,8 @@ $utilisateur_actuel = $_SESSION['utilisateur']['Pseudo'];
 $utilisateurs_bloques = [];
 foreach ($users as $utilisateur) {
     if ($utilisateur['Pseudo'] === $utilisateur_actuel) {
-        if (isset($utilisateur['utilisateursbloqués'])) {
-            $utilisateurs_bloques = $utilisateur['utilisateursbloqués'];
+        if (isset($utilisateur['Utilisateursbloqués'])) {
+            $utilisateurs_bloques = $utilisateur['Utilisateursbloqués'];
         }
         break;
     }

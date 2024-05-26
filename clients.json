@@ -20,7 +20,10 @@
             "Adresse": "",
             "Date_inscription": "2024-05-24",
             "Abonné": "1",
-            "utilisateursbloqués": []
+            "Utilisateursbloqués": [
+                "a"
+            ],
+            "Visites": []
         },
         {
             "Pseudo": "Lilou",
@@ -42,7 +45,10 @@
             "Adresse": "302 CAUCHY ",
             "Date_inscription": "24-05-22",
             "Abonné": "1",
-            "utilisateursbloqués": []
+            "Utilisateursbloqués": [],
+            "Visites": [
+                "z"
+            ]
         },
         {
             "Pseudo": "a",
@@ -64,7 +70,12 @@
             "Adresse": "",
             "Date_inscription": "2024-05-24",
             "Abonné": "1",
-            "utilisateursbloqués": []
+            "Utilisateursbloqués": [
+                "z"
+            ],
+            "Visites": [
+                "z"
+            ]
         }
     ],
     "conversations": [

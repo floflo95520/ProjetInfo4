@@ -95,7 +95,9 @@ if(isset($_POST["source"])){
                 "Mot_de_passe" => password_hash($_POST["Mot_de_passe"],PASSWORD_DEFAULT),//
                 "Adresse"=>$_POST["Adresse"],//
                 "Date_inscription"=>date("Y-m-d"),//
-                "Abonné"=>$Abonnement
+                "Abonné"=>$Abonnement,
+                "Utilisateursbloqués" => [],
+                "Visites" => []
                 );
 
                 $nvPseudo=$_POST["Pseudo"];

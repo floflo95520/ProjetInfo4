@@ -33,7 +33,7 @@ $destinataire_trouve = false;
 foreach ($conversations["utilisateur"] as $utilisateur) {
     if ($utilisateur["Pseudo"] === $destinataire) {
         $destinataire_trouve = true;
-        if (in_array($utilisateur_actuel, $utilisateur["utilisateursbloqués"])) {
+        if (in_array($utilisateur_actuel, $utilisateur["Utilisateursbloqués"])) {
             echo "Vous avez été bloqué par cet utilisateur.";
             exit();
         }

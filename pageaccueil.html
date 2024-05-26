@@ -16,8 +16,8 @@
 				<li><a href="deconnexion.php">Deconnexion</a></li>
 			</ul>
 		</nav>
-		<a href="bloquer_utilisateur.html">Bloquer</a>
 		<a href="debloquer_utilisateur.html">Débloquer</a>
+		<a href="pagevisites.html"></a>
 		<h1> Bienvenue ! </h1>
 	</br>
 
@@ -31,10 +31,7 @@
 			var xhr = new XMLHttpRequest();
 			xhr.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
-					var utilisateurs = JSON.parse(xhr.response);
-					console.log(utilisateurs);
-		
-		
+					var utilisateurs = JSON.parse(xhr.response);		
 					
 		
 					utilisateurs.forEach(element => {
@@ -51,7 +48,7 @@
 						div.appendChild(utilisateurDiv);
 
 						var profilLien = document.createElement('a');
-                    profilLien.href = 'pageprofil.php?user=' + encodeURIComponent(element.Pseudo);
+                    profilLien.href = 'pageprofil.html?user=' + encodeURIComponent(element.Pseudo);
                     profilLien.appendChild(utilisateurDiv);
 
                 

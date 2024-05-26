@@ -21,22 +21,22 @@ $utilisateur_a_bloquer_trouve = false;
 
 // Initialiser les listes de blocage si elles n'existent pas
 foreach ($donnees["utilisateur"] as &$utilisateur) {
-    if (!isset($utilisateur["utilisateursbloqués"])) {
-        $utilisateur["utilisateursbloqués"] = [];
+    if (!isset($utilisateur["Utilisateursbloqués"])) {
+        $utilisateur["Utilisateursbloqués"] = [];
     }
 }
 
 foreach ($donnees["utilisateur"] as &$utilisateur) {
     if ($utilisateur["Pseudo"] === $utilisateur_actuel) {
         $utilisateur_actuel_trouve = true;
-        if (!in_array($utilisateur_a_bloquer, $utilisateur["utilisateursbloqués"])) {
-            $utilisateur["utilisateursbloqués"][] = $utilisateur_a_bloquer;
+        if (!in_array($utilisateur_a_bloquer, $utilisateur["Utilisateursbloqués"])) {
+            $utilisateur["Utilisateursbloqués"][] = $utilisateur_a_bloquer;
         }
     }
     if ($utilisateur["Pseudo"] === $utilisateur_a_bloquer) {
         $utilisateur_a_bloquer_trouve = true;
-        if (!in_array($utilisateur_actuel, $utilisateur["utilisateursbloqués"])) {
-            $utilisateur["utilisateursbloqués"][] = $utilisateur_actuel;
+        if (!in_array($utilisateur_actuel, $utilisateur["Utilisateursbloqués"])) {
+            $utilisateur["Utilisateursbloqués"][] = $utilisateur_actuel;
         }
     }
 }
