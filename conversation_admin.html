@@ -13,18 +13,15 @@
 			<li><a href="deconnexion.php">Deconnexion</a></li>
 		</ul>
 	</nav>
-    <h1>Conversation avec <span id="nom_utilisateur"></span></h1>
+    <h1>Conversation entre <span id="nom_utilisateur"></span></h1>
     <div id="messages"></div>
-    <form id="form-message">
-        <input type="text" id="message" placeholder="Votre message">
-        <button type="submit">Envoyer</button>
-    </form>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var urlParams = new URLSearchParams(window.location.search);
-            var utilisateur = urlParams.get('user');
-            document.getElementById('nom_utilisateur').textContent = utilisateur; // l.25/26/27 => Chat gpt
+            var utilisateur1 = urlParams.get('utilisateur1');
+            var utilisateur2 = urlParams.get('utilisateur2');
+            document.getElementById('nom_utilisateur').textContent = utilisateur1 + 'et' + utilisateur2; // bout de code => Chat gpt
 
 
             function chargerConversation() {
@@ -32,6 +29,7 @@
                 xhr.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         var messages = JSON.parse(this.responseText);
+                        console.log(messages);
                         var messagesDiv = document.getElementById('messages');
                         messagesDiv.innerHTML = '';
                         messages.forEach(function(message) {
@@ -39,51 +37,29 @@
                             div.classList.add(message.sender === 'currentUser' ? 'message-sent' : 'message-received');
                             div.innerHTML = '<strong>' + message.sender + ':</strong> ' + message.content +
                                 ' <button id="but" onclick="supprimerMessage(\'' + message.id + '\')">Supprimer</button>' +
-                                ' <button id="but" onclick="signalerMessage(\'' + message.id + '\')">Signaler</button>';
                             messagesDiv.appendChild(div);
                         });
                     }
                 };
-                xhr.open('GET', 'chargerconversation.php?user=' + encodeURIComponent(utilisateur), true);
+                xhr.open('GET', 'chargerconversation_admin.php?utilisateur1=' + encodeURIComponent(utilisateur1) + '&utilisateur2=' + encodeURIComponent(utilisateur2), true);
                 xhr.send();
             }
 
-            function signalerMessage(messageId) {
-                var utilisateursignale=document.getElementById('nom_utilisateur').textContent;
-                window.location.href = 'signaler_message.html?utilisateursignale=' + encodeURIComponent(utilisateursignale) + '&messageId=' + encodeURIComponent(messageId);
-            }
-
-            document.getElementById('form-message').addEventListener('submit', function(event) {
-                event.preventDefault();
-                var message = document.getElementById('message').value;
-                var xhr = new XMLHttpRequest();
-                xhr.open('POST', 'envoyer_message.php', true);
-                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                xhr.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        chargerConversation();
-                        document.getElementById('message').value = '';
-                    }
-                };
-                xhr.send('message=' + encodeURIComponent(message) + '&recipient=' + encodeURIComponent(utilisateur));
-            });
 
             window.supprimerMessage = function(messageId) {
                 var xhr = new XMLHttpRequest();
-                xhr.open('POST', 'supprimer_message.php', true);
+                xhr.open('POST', 'supprimer_message_admin.php', true);
                 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                 xhr.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         chargerConversation();
                     }
                 };
-                xhr.send('message_id=' + encodeURIComponent(messageId) + '&recipient=' + encodeURIComponent(utilisateur));
+                xhr.send('message_id=' + encodeURIComponent(messageId) + '&utilisateur1=' + encodeURIComponent(utilisateur1) + '&utilisateur2=' + encodeURIComponent(utilisateur2));
             };
 
-            window.signalerMessage = signalerMessage; // Assurez-vous que la fonction est définie dans le scope global
 
             chargerConversation();
         });
     </script>
-</body>
-</html>
+

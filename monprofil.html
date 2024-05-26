@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Mon Profil</title>
+    <link rel="stylesheet" href="css/monprofil.css">
+</head>
+<body>
+    <h1>Mon Profil</h1>
+    <form id="profilForm">
+        <div id="gauche">
+            <label><h4>Pseudo:</h4></label>
+            <input type="text" id="pseudo" readonly><br>
+            <label><h4>Sexe:</h4></label>
+            <input type="text" id="sexe"><br>
+            <label><h4>Date de naissance:</h4></label>
+            <input type="date" id="date_naissance"><br>
+            <label><h4>Signe astrologique:</h4></label>
+            <input type="text" id="signe_astrologique"><br>
+            <label><h4>Profession:</h4></label>
+            <input type="text" id="profession"><br>
+            <label><h4>Département:</h4></label>
+            <input type="text" id="departement"><br>
+            <label><h4>Ville:</h4></label>
+            <input type="text" id="ville"><br>
+            <label><h4>Situation:</h4></label>
+            <input type="text" id="situation"><br>
+            <label><h4>Taille:</h4></label>
+            <input type="number" id="taille"><br>
+            <label><h4>Poids:</h4></label>
+            <input type="text" id="poids"><br>
+            <label><h4>Couleur des yeux:</h4></label>
+            <input type="text" id="couleur_des_yeux"><br>
+            <label><h4>Couleur des cheveux:</h4></label>
+            <input type="text" id="couleur_des_cheveux"><br>
+            <label><h4>Description:</h4></label>
+            <textarea id="description"></textarea><br>
+            <label><h4>Nom:</h4></label>
+            <input type="text" id="nom"><br>
+            <label><h4>Prénom:</h4></label>
+            <input type="text" id="prenom"><br>
+            <label><h4>Mot de passe:</h4></label>
+            <input type="text" id="mot_de_passe"><br>
+            <label><h4>Adresse:</h4></label>
+            <input type="text" id="adresse"><br>
+        </div>
+        <button type="button" onclick="mettreAJourProfil()">Mettre à jour</button>
+    </form>
+
+    <script>
+        // Fonction pour récupérer les données de l'utilisateur connecté
+        function chargerProfil() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "mon_profil.php", true);
+            xhr.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var utilisateur = JSON.parse(this.responseText);
+                    document.getElementById('pseudo').value = utilisateur.Pseudo;
+                    document.getElementById('sexe').value = utilisateur.Sexe;
+                    document.getElementById('date_naissance').value = utilisateur.Date_de_naissance;
+                    document.getElementById('signe_astrologique').value = utilisateur.Signe_astrologique;
+                    document.getElementById('profession').value = utilisateur.Profession;
+                    document.getElementById('ville').value = utilisateur.Ville;
+                    document.getElementById('description').value = utilisateur.Description;
+                    document.getElementById('departement').value = utilisateur.Département;
+                    document.getElementById('situation').value = utilisateur.Situation;
+                    document.getElementById('taille').value = utilisateur.Taille;
+                    document.getElementById('poids').value = utilisateur.Poids;
+                    document.getElementById('couleur_des_yeux').value = utilisateur.Couleur_des_yeux;
+                    document.getElementById('couleur_des_cheveux').value = utilisateur.Couleur_des_cheveux;
+                    document.getElementById('nom').value = utilisateur.Nom;
+                    document.getElementById('prenom').value = utilisateur.Prenom;
+                    document.getElementById('mot_de_passe').value = utilisateur.Mot_de_passe;
+                    document.getElementById('adresse').value = utilisateur.Adresse;
+                }
+            };
+            xhr.send();
+        }
+
+        // Fonction pour mettre à jour le profil de l'utilisateur
+        function mettreAJourProfil() {
+            var utilisateur = {
+                Sexe: document.getElementById('sexe').value,
+                Date_de_naissance: document.getElementById('date_naissance').value,
+                Signe_astrologique: document.getElementById('signe_astrologique').value,
+                Profession: document.getElementById('profession').value,
+                Ville: document.getElementById('ville').value,
+                Description: document.getElementById('description').value,
+                Département: document.getElementById('departement').value,
+                Situation: document.getElementById('situation').value,
+                Taille: document.getElementById('taille').value,
+                Poids: document.getElementById('poids').value,
+                Couleur_des_yeux: document.getElementById('couleur_des_yeux').value,
+                Couleur_des_cheveux: document.getElementById('couleur_des_cheveux').value,
+                Nom: document.getElementById('nom').value,
+                Prenom: document.getElementById('prenom').value,
+                Mot_de_passe: document.getElementById('mot_de_passe').value,
+                Adresse: document.getElementById('adresse').value
+            };
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "changerprofil.php", true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    alert("Profil mis à jour avec succès!");
+                }
+            };
+            xhr.send(JSON.stringify(utilisateur));
+        }
+
+        // Charger le profil au chargement de la page
+        window.onload = chargerProfil;
+    </script>
+</body>
+</html>
+
+               

@@ -13,6 +13,7 @@
         xhr.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var utilisateurs = JSON.parse(xhr.response);
+                console.log(utilisateurs);
 
                 utilisateurs.forEach(utilisateur => {
                     var userDiv = document.createElement('div');

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des Signalements</title>
+    <link rel="stylesheet" type="text/css" href="css/liste_signalements.css">
+</head>
+<body>
+    <h1>Liste des Signalements</h1>
+    <div id="signalementsList"></div>
+
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var signalements = JSON.parse(xhr.responseText);
+
+                signalements.forEach(signalement => {
+                    var signalementDiv = document.createElement('div');
+                    signalementDiv.innerHTML = `
+                        <p><strong>Signalé:</strong> ${signalement.signalé}</p>
+                        <p><strong>Signalé par:</strong> ${signalement.signale_par}</p>
+                        <p><strong>ID du message:</strong> ${signalement.message_id}</p>
+                        <p><strong>Raison:</strong> ${signalement.raison}</p>
+                        <p><strong>Heure du signalement:</strong> ${signalement.heuresignalement}</p>
+                    `;
+                    var messageLien = document.createElement('a');
+                    messageLien.href = 'conversation_admin.html?utilisateur1=' + encodeURIComponent(signalement.signale_par) + '&utilisateur2=' + encodeURIComponent(signalement.signalé);
+                    messageLien.appendChild(signalementDiv);
+
+                    var signalementsListDiv = document.getElementById('signalementsList');
+                    signalementsListDiv.appendChild(messageLien);
+                });
+            }
+        };
+        xhr.open("GET", "liste_signalements.php", true);
+        xhr.send();
+    </script>
+</body>
+</html>
