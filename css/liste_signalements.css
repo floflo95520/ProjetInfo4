@@ -1,0 +1,78 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav[id=menu] {
+    width: 100%;
+    background-color: #03011a; 
+    position: sticky;
+    top: 0;
+}
+
+nav[id=menu] ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+nav[id=menu] a {
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+nav[id=menu] a:hover {
+    color: orange;
+    border-bottom: 2px solid gold;
+}
+
+body {
+    font-family: 'Avenir', sans-serif;
+    background-image: url("../images/fondconversation.png");
+    background-size: cover;
+    background-position: center top 5%;
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 5%;
+    font-size: 48px;
+    margin-bottom: 2%;
+    color: #7affff;
+    font-family: 'Copperplate', 'Copperplate Gothic Light', fantasy;
+}
+
+#signalementsList {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#signalementsList div {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#signalementsList div p {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff7f00;
+}

@@ -1,44 +1,44 @@
-*{
+/* Base styles */
+* {
     margin: 0px;
     padding: 0px;
     font-family: Avenir, sans-serif;
 }
 
-body{
+body {
     background-image: url("../images/fondabonnement2.jpg");
     background-size: cover;
-    background-position: center top 5%;    
-    color:white;
+    background-position: center top 5%;
+    color: white;
     margin: 0;
     padding: 0;
-
 }
 
-nav[id=menu] ul{
+nav[id=menu] ul {
     list-style-type: none;
 }
 
-nav[id=menu] li{
+nav[id=menu] li {
     float: left;
     width: 25%;
     text-align: center;
 }
 
-nav[id=menu] ul::after{
+nav[id=menu] ul::after {
     content: "";
     display: table;
     clear: both;
 }
 
-nav[id=menu]{
+nav[id=menu] {
     width: 100%;
-    background-color: #03011a; 
+    background-color: #03011a;
     margin: 0 auto;
     position: sticky;
     top: 0px;
 }
 
-nav[id=menu] a{
+nav[id=menu] a {
     display: block;
     text-decoration: none;
     color: white;
@@ -47,49 +47,96 @@ nav[id=menu] a{
     text-align: center;
 }
 
-nav[id=menu] a:hover{
-    color:orange;
+nav[id=menu] a:hover {
+    color: orange;
     border-bottom: 2px solid gold;
 }
 
-
-
-
-
-h1{
+/* Heading styles */
+h1 {
     color: white;
     text-align: center;
     font-size: 50px;
     margin-bottom: 20px;
-    font-family: Copperplate,Copperplate Gothic Light,fantasy;
+    font-family: Copperplate, Copperplate Gothic Light, fantasy;
 }
-    
 
- #retour {
-    font-family: Copperplate,Copperplate Gothic Light,fantasy;    
+/* Button styles */
+#retour {
+    font-family: Copperplate, Copperplate Gothic Light, fantasy;
     font-size: 40px;
     background-color: #26619C;
     color: white;
     padding: 10px 20px;
-
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 20px;
 }
 
+#retour:hover {
+    background-color: #1a4b73;
+}
+
+/* Container styles */
 div {
-    margin-top:20px;
-    padding-left:20%;
+    margin-top: 20px;
+    padding-left: 20%;
     color: #7affff;
-    
 }
 
 p {
     font-size: 25px;
     max-width: 60%;
-    background: rgba(3,9,9,0.3);
-    margin-bottom:2%;
+    background: rgba(3, 9, 9, 0.3);
+    margin-bottom: 2%;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 strong {
-    font-family: Copperplate,Copperplate Gothic Light,fantasy;
+    font-family: Copperplate, Copperplate Gothic Light, fantasy;
     font-size: 30px;
-    background: rgba(3,9,9,0.4);
+    background: rgba(3, 9, 9, 0.4);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Link styles */
+a.message-link {
+    display: inline-block;
+    font-family: Copperplate, Copperplate Gothic Light, fantasy;
+    font-size: 25px;
+    background-color: #3fafff;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+a.message-link:hover {
+    background-color: yellow;
+    color: black;
+}
+
+/* Form styles */
+form#form-bloquer button {
+    font-family: Copperplate, Copperplate Gothic Light, fantasy;
+    font-size: 25px;
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+form#form-bloquer button:hover {
+    background-color: #e55342;
 }

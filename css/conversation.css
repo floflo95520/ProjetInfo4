@@ -1,93 +1,111 @@
-/* Menu */
-*{
-	margin: 0px;
-	padding: 0px;
-	font-family: Avenir, sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+body {
+    font-family: 'Avenir', sans-serif;
     background-image: url("../images/fondconversation.png");
     background-size: cover;
     background-position: center top 5%;	
 }
 
-
-nav[id=menu] ul{
-	list-style-type: none;
+nav[id=menu] {
+    width: 100%;
+    background-color: #03011a; 
+    position: sticky;
+    top: 0;
 }
 
-nav[id=menu] li{
-	float: left;
-	width: 25%;
-	text-align: center;
+nav[id=menu] ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
 }
 
-nav[id=menu] ul::after{
-	content: "";
-	display: table;
-	clear: both;
+nav[id=menu] a {
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0;
+    text-align: center;
+    transition: all 0.3s ease;
 }
 
-nav[id=menu]{
-	width: 100%;
-	background-color: #03011a; 
-	margin: 0 auto;
-	position: sticky;
-	top: 0px;
+nav[id=menu] a:hover {
+    color: orange;
+    border-bottom: 2px solid gold;
 }
-
-nav[id=menu] a{
-	display: block;
-	text-decoration: none;
-	color: white;
-	border-bottom: 2px solid transparent;
-	padding: 10px 0px;
-	text-align: center;
-}
-
-nav[id=menu] a:hover{
-	color:orange;
-	border-bottom: 2px solid gold;
-}
-
-/* Fin menu */
-
 
 
 h1 {
-	text-align: center;
-	margin-top: 1%;
-    font-size: 70px;
-    margin-bottom: 5%;
-	color: #7affff;
-	font-family: Copperplate,Copperplate Gothic Light,fantasy;
+    text-align: center;
+    margin-top: 5%;
+    font-size: 48px;
+    margin-bottom: 2%;
+    color: #7affff;
+    font-family: 'Copperplate', 'Copperplate Gothic Light', fantasy;
 }
 
-#message {
-	font-size: 40px;
-	margin-left: 5%;
-	margin-right: 2%;
-	width: 60%;
-	font-family: Copperplate,Copperplate Gothic Light,fantasy;
+#messages {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 5%;
+    margin-bottom: 20px;
 }
 
- [type="submit"], #but {
-	font-size: 20px;
-	background: #3fafff;
+.message-sent, .message-received {
+    max-width: 70%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.message-sent {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+}
+
+.message-received {
+    background-color: #f9f9f9;
+    color: #333;
+    align-self: flex-start;
+}
+
+
+#form-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#form-message input[type="text"] {
+    font-size: 24px;
+    margin-right: 10px;
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Copperplate', 'Copperplate Gothic Light', fantasy;
+}
+
+#form-message button[type="submit"], #but {
+    font-size: 18px;
+    background: #3fafff;
     color: black;
     border: none;
     padding: 10px 20px;
     border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
- [type="submit"]:hover {
+#form-message button[type="submit"]:hover, #but:hover {
     background: yellow;
 }
-
-[type="text"] {
-    font-size: 40px;
-    margin-left: 5%;
-    margin-right: 2%;
-    width: 60%;
-    font-family: Copperplate,Copperplate Gothic Light,fantasy;
- }

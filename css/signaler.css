@@ -1,0 +1,56 @@
+/* Réinitialisation des styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Avenir', sans-serif;
+    background-image: url("../images/fondconversation.png");
+    background-size: cover;
+    background-position: center top 5%;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 5%;
+    font-size: 48px;
+    margin-bottom: 2%;
+    color: #7affff;
+    font-family: 'Copperplate', 'Copperplate Gothic Light', fantasy;
+}
+
+#form-signalement {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #3fafff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
