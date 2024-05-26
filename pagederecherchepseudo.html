@@ -4,53 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recherche d'utilisateurs</title>
-    <style>
-        .result { margin-top: 20px; }
-        .user { margin-bottom: 10px; }
-    </style>
+    <link rel="stylesheet" href="css/pagederecherche.css">
 </head>
 <body>
     <h1>Recherche d'utilisateurs</h1>
-    <input type="text" id="searchBar" placeholder="Bar de recherche (avec son pseudo)" onkeyup="searchpseudo()">
+    <input type="text" id="searchBar" placeholder="Bar de recherche (avec son pseudo)" onkeyup="searchpseudo(this.value)">
     <div id="results" class="result"></div>
 
-    <script>// Fonction pour charger le fichier JSON
-        function loadUserData(callback) {
-            fetch('clients.json').then(response => response.json()).then(data => {
-                    callback(data);
-                })
-                .catch(error => console.error('Erreur de chargement du fichier JSON:', error));
-        }
-        
-        // Fonction de recherche d'utilisateur par pseudo
-        function searchpseudo() {
-            const bar_client = document.getElementById('searchBar').value.toLowerCase(); // Insensible à la casse
-            const in_results = document.getElementById('results'); // Récup les résultats
-            in_results.innerHTML = ''; // Remise à 0
-        
-            if (bar_client === '') {
-                return;
-            }
-        
-            loadUserData(userData => {
-                // Filtre les utilisateurs dont le pseudo contient la bar_client
-                const results = userData.utilisateur.filter(user => {
-                    const pseudo = user.Pseudo.toLowerCase(); // Pseudo insensible à la casse
-                    return pseudo.includes(bar_client); // Le pseudo contient la bar_client??
-                });
-        
-                // Le reste c'est pour l'affichage
-                if (results.length > 0) {
-                    results.forEach(user => {
-                        const userElement = document.createElement('div');
-                        userElement.className = 'user';
-                        userElement.textContent = `Pseudo: ${user.Pseudo}, Nom: ${user.Nom}, Prénom: ${user.Prenom}`;
-                        in_results.appendChild(userElement);
+    <script>   
+        function searchpseudo(text){
+            var xhr=new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    var users = JSON.parse(this.response);
+                    var resultsDiv=document.getElementById('results');
+                    resultsDiv.innerHTML = ''; // Efface les résultats précédents
+
+                    users.forEach(user => {
+                        var userLink = document.createElement('a');
+                        userLink.classList.add('user');
+                        userLink.textContent = user.Pseudo; // Affiche le pseudo de l'utilisateur
+                        userLink.href = 'pageprofil.html?user=' + encodeURIComponent(user.Pseudo); // Lien vers la page de profil
+
+                        var userDiv = document.createElement('div');
+                        userDiv.appendChild(userLink); // Ajoute le lien vers la page de profil à la liste des résultats
+
+                        resultsDiv.appendChild(userDiv); // Ajoute l'utilisateur à la liste des résultats
                     });
-                } else {
-                    in_results.textContent = 'Aucun utilisateur trouvé.';
                 }
-            });
-        }</script>
+            };
+            
+            // Envoie une requête au serveur avec le texte de recherche
+            xhr.open('GET', 'recherche_utilisateurs.php?texte=' + encodeURIComponent(text), true);
+            xhr.send();
+        }
+    </script>
 </body>
 </html>

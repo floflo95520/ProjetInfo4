@@ -37,8 +37,8 @@
                             var div = document.createElement('div');
                             div.classList.add(message.sender === 'currentUser' ? 'message-sent' : 'message-received');
                             div.innerHTML = '<strong>' + message.sender + ':</strong> ' + message.content +
-                                ' <button onclick="supprimerMessage(\'' + message.id + '\')">Supprimer</button>' +
-                                ' <button onclick="signalerMessage(\'' + message.id + '\')">Signaler</button>';
+                                ' <button id="but" onclick="supprimerMessage(\'' + message.id + '\')">Supprimer</button>' +
+                                ' <button id="but" onclick="signalerMessage(\'' + message.id + '\')">Signaler</button>';
                             messagesDiv.appendChild(div);
                         });
                     }

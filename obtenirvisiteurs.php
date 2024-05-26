@@ -10,16 +10,16 @@ if (!isset($_SESSION['utilisateur'])) {
 
 
 // Charger le fichier JSON
-$json = file_get_contents('database.json');
+$json = file_get_contents('clients.json');
 $data = json_decode($json, true);
 
-$pseudo = $_GET['pseudo'];
+
 $visitors = [];
 
 // Trouver l'utilisateur correspondant et récupérer ses visiteurs
-foreach ($data['users'] as $user) {
-    if ($user['pseudo'] == $pseudo) {
-        $visitors = $user['visites'];
+foreach ($data['utilisateur'] as $user) {
+    if ($user['Pseudo'] == $_SESSION['utilisateur']['Pseudo']) {
+        $visitors = $user['Visites'];
         break;
     }
 }

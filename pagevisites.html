@@ -1,9 +1,56 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Visites</title>
-    </head>
-    <body>
-        <h1>Voici les utilisateurs qui vous ont visité récemment</h1>
-    </body>
+<head>
+    <title>Visites</title>
+</head>
+<body>
+    <h1>Voici les utilisateurs qui vous ont visité récemment</h1>
+    <div id="visitorsList"></div>
+
+    <script>
+        // Fonction pour charger la liste des visiteurs
+        function loadVisitors() {
+            // Création de l'objet XMLHttpRequest
+            var xhr = new XMLHttpRequest();
+
+            // Spécification de la requête
+            xhr.open('GET', 'obtenirvisiteurs.php?Pseudo=' + encodeURIComponent, true);
+
+            // Définition de la fonction de rappel
+            xhr.onload = function() {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    // Conversion de la réponse JSON en objet JavaScript
+                    var visitors = JSON.parse(xhr.responseText);
+                    console.log(visitors);
+
+                    // Sélection de l'élément HTML où afficher la liste
+                    var visitorsList = document.getElementById('visitorsList');
+
+                    // Construction de la liste des visiteurs
+                    var html = '<ul>';
+                    visitors.forEach(function(visitor) {
+                        html += '<li>' + visitor + '</li>';
+                    });
+                    html += '</ul>';
+
+                    // Affichage de la liste des visiteurs dans l'élément HTML
+                    visitorsList.innerHTML = html;
+                } else {
+                    console.error('La requête a échoué : ' + xhr.status);
+                }
+            };
+
+            // Gestion des erreurs
+            xhr.onerror = function() {
+                console.error('Erreur lors de la requête.');
+            };
+
+            // Envoi de la requête
+            xhr.send();
+        }
+
+        // Appel de la fonction pour charger la liste des visiteurs au chargement de la page
+        document.addEventListener('DOMContentLoaded', loadVisitors);
+    </script>
+</body>
 </html>

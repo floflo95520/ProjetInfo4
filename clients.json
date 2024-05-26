@@ -20,10 +20,10 @@
             "Adresse": "",
             "Date_inscription": "2024-05-24",
             "Abonné": "1",
-            "Utilisateursbloqués": [
+            "Utilisateursbloqués": [],
+            "Visites": [
                 "a"
-            ],
-            "Visites": []
+            ]
         },
         {
             "Pseudo": "Lilou",
@@ -70,9 +70,7 @@
             "Adresse": "",
             "Date_inscription": "2024-05-24",
             "Abonné": "1",
-            "Utilisateursbloqués": [
-                "z"
-            ],
+            "Utilisateursbloqués": [],
             "Visites": [
                 "z"
             ]

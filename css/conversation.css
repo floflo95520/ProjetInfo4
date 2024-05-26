@@ -71,7 +71,7 @@ h1 {
 	font-family: Copperplate,Copperplate Gothic Light,fantasy;
 }
 
- [type="submit"] {
+ [type="submit"], #but {
 	font-size: 20px;
 	background: #3fafff;
     color: black;
