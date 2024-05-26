@@ -6,7 +6,7 @@
 }
 
 body{
-    background-image: url("../images/Fondconstellation2.png");
+    background-image: url("../images/fondconversation.png");
     background-size: cover;
     background-position: center top 5%;	
 }
@@ -63,5 +63,23 @@ h1 {
 	font-family: Copperplate,Copperplate Gothic Light,fantasy;
 }
 
+#message {
+	font-size: 40px;
+	margin-left: 5%;
+	margin-right: 2%;
+	width: 60%;
+	font-family: Copperplate,Copperplate Gothic Light,fantasy;
+}
 
+ [type="submit"] {
+	font-size: 20px;
+	background: #3fafff;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
 
+ [type="submit"]:hover {
+    background: yellow;
+}
