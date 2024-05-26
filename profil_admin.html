@@ -7,7 +7,10 @@
 <body>
     <h1>Profil Utilisateur</h1>
     <div id="profil"></div>
-    <button id="modifier-btn">Modifier Profil</button>
+
+    <button id="supprimer-btn">Supprimer le profil</button>
+    <button id="bannir-btn">Bannir l'utilisateur</button>
+
 
     <script>
         function getQueryParams() {
@@ -77,6 +80,42 @@
             
             xhr.open("GET", "profil_admin.php?user=" + encodeURIComponent(userPseudo), true);
             xhr.send();
+
+            document.getElementById('supprimer-btn').addEventListener('click', function() {
+                if (confirm("Voulez-vous vraiment supprimer ce profil ?")) {
+                    var xhrDelete = new XMLHttpRequest();
+                    xhrDelete.open('POST', 'supprimer_utilisateur.php', true);
+                    xhrDelete.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhrDelete.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            var response = JSON.parse(xhrDelete.responseText);
+                            alert(response.message);
+                            if (response.success) {
+                                window.location.href = 'liste_utilisateurs.html';
+                            }
+                        }
+                    };
+                    xhrDelete.send('user=' + encodeURIComponent(userPseudo));
+                }
+            });
+
+            document.getElementById('bannir-btn').addEventListener('click', function() {
+                if (confirm("Voulez-vous vraiment bannir cet utilisateur ?")) {
+                    var xhrBan = new XMLHttpRequest();
+                    xhrBan.open('POST', 'bannir_utilisateur.php', true);
+                    xhrBan.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhrBan.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            var response = JSON.parse(xhrBan.responseText);
+                            alert(response.message);
+                            if (response.success) {
+                                window.location.href = 'liste_utilisateurs.html';
+                            }
+                        }
+                    };
+                    xhrBan.send('user=' + encodeURIComponent(userPseudo));
+                }
+            });
         }
     </script>
 </body>

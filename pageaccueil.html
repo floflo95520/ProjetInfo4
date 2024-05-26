@@ -9,7 +9,7 @@
     <body>
 		<nav id="menu">
 			<ul>
-				<li><a href="monprofil.php">Profil</a></li>
+				<li><a href="monprofil.html">Profil</a></li>
 				<li><a href="pageabonnement.php">Abonnement</a></li>
 				<li><a href="pagederecherchepseudo.html">Recherche</a></li>
 				<li><a href="pagemessagerie.html">Messagerie</a></li>
@@ -24,6 +24,8 @@
 		<a id="lien" href="debloquer_utilisateur.html">Débloquer</a>
 		
 		<a id="lien" href="pagevisites.html">Liste des visiteurs de mon profil</a>
+		
+
 	</br>
 
 	</br>
@@ -85,7 +87,13 @@
                     var adminLink = document.createElement('a');
                     adminLink.href = 'liste_utilisateurs.html';
                     adminLink.innerText = 'Liste de tous les utilisateurs';
+					adminLink.id="lien";
                     divAdmin.appendChild(adminLink);
+					var adminLink2 =document.createElement('a');
+					adminLink2.href ='liste_signalements.html';
+					adminLink2.innerText = 'Liste des messages signalés'
+					adminLink2.id="lien";
+					divAdmin.appendChild(adminLink2);
                 }
             }
         };

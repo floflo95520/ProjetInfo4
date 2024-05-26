@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Visites</title>
-	<link rel="stylesheet" type="text/css" href="CSS/pagevisites.css">
+    <title>Visiteurs de mon profil</title>
+    <link rel="stylesheet" href="css/pagevisites.css">
 </head>
 <body>
-	<nav id="menu">
+    <nav id="menu">
 		<ul>
 			<li><a href="pageaccueil.html">Accueil</a></li>
 			<li><a href="monprofil.php">Profil</a></li>
@@ -13,56 +13,41 @@
 			<li><a href="deconnexion.php">Deconnexion</a></li>
 		</ul>
 	</nav>
-	
-    <h1>Curieux de savoir si vous avez du succès ?</h1>
-	
-	<h2>Voici la liste de ceux qui ont visiter ton profil :</h2>
+    <h1>Visiteurs de mon profil</h1>
     <div id="visitorsList"></div>
-	
+    <div id="error"></div>
+
     <script>
-        // Fonction pour charger la liste des visiteurs
-        function loadVisitors() {
-            // Création de l'objet XMLHttpRequest
+        document.addEventListener('DOMContentLoaded', function() {
             var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'obtenirvisiteurs.php', true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        try {
+                            var visitors = JSON.parse(xhr.responseText);
+                            var visitorsList = document.getElementById('visitorsList');
+                            visitorsList.innerHTML = ''; // Vider la liste des visiteurs
 
-            // Spécification de la requête
-            xhr.open('GET', 'obtenirvisiteurs.php?Pseudo=' + encodeURIComponent, true);
-
-            // Définition de la fonction de rappel
-            xhr.onload = function() {
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    // Conversion de la réponse JSON en objet JavaScript
-                    var visitors = JSON.parse(xhr.responseText);
-                    console.log(visitors);
-
-                    // Sélection de l'élément HTML où afficher la liste
-                    var visitorsList = document.getElementById('visitorsList');
-
-                    // Construction de la liste des visiteurs
-                    var html = '<ul>';
-                    visitors.forEach(function(visitor) {
-                        html += '<li>' + visitor + '</li>';
-                    });
-                    html += '</ul>';
-
-                    // Affichage de la liste des visiteurs dans l'élément HTML
-                    visitorsList.innerHTML = html;
-                } else {
-                    console.error('La requête a échoué : ' + xhr.status);
+                            if (visitors.error) {
+                                document.getElementById('error').textContent = visitors.error;
+                            } else {
+                                visitors.forEach(function(visitor) {
+                                    var visitorDiv = document.createElement('div');
+                                    visitorDiv.textContent = visitor;
+                                    visitorsList.appendChild(visitorDiv);
+                                });
+                            }
+                        } catch (e) {
+                            document.getElementById('error').textContent = 'Erreur de parsing JSON : ' + e.message;
+                        }
+                    } else {
+                        document.getElementById('error').textContent = 'Erreur HTTP : ' + xhr.status;
+                    }
                 }
             };
-
-            // Gestion des erreurs
-            xhr.onerror = function() {
-                console.error('Erreur lors de la requête.');
-            };
-
-            // Envoi de la requête
             xhr.send();
-        }
-
-        // Appel de la fonction pour charger la liste des visiteurs au chargement de la page
-        document.addEventListener('DOMContentLoaded', loadVisitors);
+        });
     </script>
 </body>
 </html>

@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         file_put_contents("clients.json", json_encode($donnees, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
 
         echo "Vous êtes maintenant abonné!";
-        header("Location:pageaccueil.php");
+        header("Location:pageaccueil.html");
     } catch (Exception $e) {
         echo "Erreur :" . $e->getMessage();
     }
